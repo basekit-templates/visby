@@ -1,0 +1,1093 @@
+
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+//  1.  LESS Includes
+//  2.  Global Styles
+//  3.  Theme Styles
+
+
+
+// -----------------------------
+//  1. LESS Includes
+// -----------------------------
+
+
+// BK LESS Framework Include
+// -------------------------
+
+//@import "https://gist.githubusercontent.com/rhysjparry/97cdc157768415b6e7c9/raw/963fbff831539ab4d2666d2af7304e5a71aeafd1/vars.less";
+@import "@{templateCommon}/bk-less-framework.less";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+
+
+
+// Theme Includes
+// --------------
+
+@import "@{templateLocal}/less/mixins.less";            // Mixins
+@import "@{templateLocal}/less/type.less";              // Typography
+@import "@{templateLocal}/less/widgets.less";           // Widgets
+
+
+// Plugin Includes
+// ---------------
+
+@import "@{templateLocal}/less/plugins/blog.less";              // Blog
+@import "@{templateLocal}/less/plugins/menu.less";              // Menu
+@import "@{templateLocal}/less/plugins/ecommerce.less";         // Ecommerce
+
+
+
+// -----------------------------
+//  2. Theme Styles
+// -----------------------------
+
+
+
+// Global
+// ---------------
+
+
+// Container
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+
+    @media @tablet-860px {
+        margin: 0 25px;
+    }
+}
+
+.template-container {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    background-color: @color__body--background;
+}
+
+
+
+// Form Styles
+// ---------------
+
+
+// Legends
+legend {
+    color: @color__form-legend--text;
+    font-family: @font__h2--font-family;
+    font-size: bkscale(@font__h3--font-size, 0.98);
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h2--line-height;
+    margin-bottom: 25px;
+
+    @media @mobile-650px {
+        font-size: bkscale(@font__h3--font-size, 0.8);
+        line-height: bkscale(@font__h3--line-height, 0.85);
+    }
+}
+
+// Labels
+label {
+    color: @color__form-label--text;
+    font-size: bkscale(@font__button--font-size, 0.9);
+    font-weight: @font__button--font-weight;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+// Inputs & textareas
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line {
+    border: 2px solid #ddd;
+    font-size: bkscale(@font__p--font-size, 0.95);
+    padding: 10px;
+    -webkit-appearance: none;
+    &:focus {
+        border-color: @color__secondary;
+        box-shadow: inset 0 0px 10px rgba(240,240,240, 0.5);
+        .transition(.3s all ease-in);
+    }
+}
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.product-filters .input--search,
+.input--single-line {
+    height: 54px;
+}
+
+// Selects
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #ddd;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 500;
+    height: 54px;
+    padding: 0 12px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+select::-ms-expand{
+    display: none;
+}
+
+// Add custom dropdown icon to selects
+.select-wrap {
+    position: relative;
+    &:after {
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 16px;
+        text-rendering: auto;
+        content:"\f107";
+        position: absolute;
+        right: 15px;
+        top: 22%;
+    }
+}
+
+// Buttons
+button,
+.button {
+    background-color: @color__button--background;
+    color: @color__button--text;
+    font-weight: @font__button--font-weight;
+    letter-spacing: @font__button--letter-spacing;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    .transition(all 0.5s ease-in-out);
+
+    &:hover {
+        background-color: darken(@color__button--background--hover, 10%);
+        color: darken(@color-swatch2, 20%);
+    }
+}
+
+.button--expand {
+    background-color: transparent;
+    padding: 0;
+
+    &:hover {
+        background-color: transparent;
+    }
+    .more, .less {
+        background-color: @color__button--background;
+        color: @color__secondary;
+        display: inline-block;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 25px;
+        padding: 0 10px;
+    }
+}
+
+
+// Header
+// ---------------
+
+
+// Default header styling
+.template-header,
+.home-page [data-widget-type="responsiveslideshow"].bk-tpl-hidden + .template-header,
+.blogpost-page [data-widget-type="blogpost"].bk-tpl-hidden + .template-header {
+    background-color: @color__header--background;
+    border-bottom: 1px solid @color-swatch7;
+    padding: 15px 25px;
+    position: relative;
+
+    @media @tablet {
+        padding: 20px 0 20px 20px;
+    }
+
+    @media @mobile-650px {
+        margin: 0;
+        padding: 20px 0 20px 25px;
+    }
+
+    // Header flexbox alignment
+    .container {
+        // Flex
+        .flex;
+        .flex-display;
+        .flex-wrap(nowrap);
+        .align-content(flex-start);
+        .align-items(center);
+        .justify-content(flex-start);
+        margin: 0 auto;
+        position: relative;
+
+        @media @tablet {
+            .flex-wrap(nowrap);
+        }
+
+        @media @mobile-650px {
+            margin: 0;
+        }
+    }
+
+    // Logo & Companyname
+    [data-widget-type="logo"],
+    [data-widget-type="companyname"] {
+        @media @tablet {
+            z-index: 9999;
+        }
+    }
+
+    // Logo
+    [data-widget-type="logo"] {
+        margin-right: 10px;
+        max-width: 100%;
+
+        .logo-link {
+            display: block;
+        }
+
+        img {
+            max-height: 300px;
+        }
+    }
+
+    // Companyname
+    [data-widget-type="companyname"] {
+        @media @tablet {
+            padding-right: 60px;
+        }
+    }
+
+    .company-link {
+        color: @color__companyname--text;
+    }
+}
+
+// Header styling if slideshow is present
+.home-page [data-widget-type="responsiveslideshow"] + .template-header,
+.blogpost-page [data-widget-type="blogpost"] + .template-header {
+    background-color: transparent;
+    border-bottom: none;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+
+    .container {
+        margin: 0;
+        max-width: 100%;
+
+         @media @mobile-650px {
+            margin: 0;
+        }
+    }
+
+    .bk-extendednavigation:after {
+        background-color: fade(@font-swatch6-color, 25%);
+
+        @media @tablet-860px {
+            display: none;
+        }
+    }
+
+    // Color of navigation links when overlaying a feature image
+    .navigation-item {
+        &.selected {
+            color: @color__navigation--text--selected;
+        }
+        .item-name {
+            color: fade(@color__navigation--text, 80%);
+
+            &:hover {
+                color: @color__navigation--text--hover;
+            }
+        }
+    }
+}
+
+.blogpost-page [data-widget-type="blogpost"] + .template-header {
+    background-color: @color-swatch1;
+}
+
+
+// Navigation
+// ---------------
+
+
+// Hide navigation toggle button
+.navigation-toggle {
+    display: none;
+}
+
+// Universal navigation styling
+.navigation-item {
+
+    &:hover .navigation-list--children {
+        display: none;
+    }
+
+    .item-name {
+        color: fade(@color__navigation--text, 65%);
+        text-overflow: initial;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 26px;
+    }
+
+    .item-name:hover {
+        color: @color__navigation--text--hover;
+    }
+
+    &.selected a {
+        color: @color__navigation--text--selected;
+    }
+
+    &:first-child .item-name {
+        padding-left: 0;
+    }
+
+    // Navigation dropdown
+    &.folder {
+        .transition(all 0.2s ease-in-out);
+
+        &.open, &:hover {
+            ul {
+                display: block;
+                height: auto;
+            }
+        }
+
+        ul {
+            border: 1px solid @color-swatch7;
+            display: none;
+            text-align: left;
+
+            .item-name {
+                padding: 10px 12px 8px;
+            }
+        }
+
+        // Navigation dropdown arrow
+        span.item-name:after {
+            color: fade(@color-swatch6, 45%);
+            content: "\f0dd";
+            font-family: FontAwesome;
+            font-size: 14px;
+            margin-left: 7px;
+            position: relative;
+            top: -2px;
+        }
+    }
+}
+
+ul.navigation-list--children {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 125px;
+    max-width: 160px;
+    background-color: @color__navigation-list--background;
+}
+
+.navigation-list {
+    height: 100%;
+    margin: 0;
+}
+
+div[data-widget-type="extendednavigation"] {
+    .flex(1 1 auto);
+    position: relative;
+}
+
+@media @tablet {
+
+    div[data-widget-type="extendednavigation"] {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+
+    .navigation-body {
+        background-color: @color__navigation-list--background;
+        -webkit-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        -moz-box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        box-shadow: -5px 0px 20px 0px rgba(0,0,0,0.065);
+        position: fixed;
+        top: 0;
+        right: -80%;
+        bottom: 0;
+        margin: 0;
+        overflow-x: scroll;
+        padding-top: 20px;
+        height: 100vh;
+        width: 75%;
+        .transition(right 400ms ease);
+        z-index: 9999;
+    }
+
+    .nav-open .navigation-body {
+        right: 0;
+    }
+
+    .navigation-body.open .navigation-item.folder ul {
+        border-bottom: 1px solid @color-swatch7;
+        border-top: 1px solid @color-swatch7;
+        padding: 5px 25px 5px;
+
+        .item-name {
+            padding: 10px 12px 8px;
+        }
+    }
+
+
+    // Navigation Toggle
+    // -----------------
+
+    .navigation-toggle {
+
+        // Displays as icon's middle bar
+        background-color: darken(@color__navigation--text--hover, 10%);
+        background-clip: content-box;
+        display: inline-block;
+        height: 47px;
+        margin: 0;
+        padding: 22px 10px 22px 15px;
+        position: fixed;
+        right: 10px;
+        top: 24px;
+        text-indent: -9999px;
+        .transition(background-color 0s ease-in);
+        width: 50px;
+        z-index: 99999;
+
+        // Top and bottom navigation item bar
+        &:after, &:before {
+            content: "";
+            height: 3px;
+            width: 30px;
+            position: absolute;
+            left: 10px;
+            display: block;
+            background: black;
+            margin-right: 0;
+            margin-left: 0;
+            .transition(all 0.35s ease-in-out);
+        }
+
+        // Top bar
+        &:before {
+            top: 14px;
+        }
+
+        // Bottom bar
+        &:after {
+            bottom: 14px;
+        }
+
+        &:hover {
+            background-color: darken(@color__navigation--text--hover, 10%);
+        }
+    }
+
+    .nav-open .navigation-toggle {
+
+        // Toggle Button open state
+        background-color: transparent;
+        .transition(background-color 0s ease-out);
+        z-index: 100000;
+
+        &:before {
+            top: 23px;
+            background: @font-swatch6-color-hover;
+            .transform(rotate(45deg));
+        }
+        &:after {
+            bottom: 21px;
+            background: @font-swatch6-color-hover;
+            .transform(rotate(-45deg));
+        }
+    }
+
+
+    // Slide out navigation
+    .navigation-body {
+
+        .navigation-list {
+            padding-top: 60px;
+            text-align: right;
+            max-height: 70%;
+            overflow-x: scroll;
+        }
+
+        .navigation-list .navigation-item {
+            display: block;
+            width: 100%;
+
+            &:last-child  {
+               border: none;
+            }
+
+            &.folder ul {
+                display: none;
+                padding-top: 0;
+                text-align: right;
+            }
+
+            &.folder.open ul {
+                display: block;
+            }
+
+            .item-name {
+                padding: 14px 25px 14px 50px;
+            }
+        }
+    }
+
+    ul.navigation-list--children  {
+        position: relative;
+        min-width: 100%;
+    }
+
+    // Navigation button overlay
+    .bk-extendednavigation + #page-zones__template-widgets__extendednavigation-header-nav-bk-overlay {
+        position: fixed!important;
+        right: 15px!important;
+        left: initial!important;
+        top: 18px!important;
+        bottom: 0px!important;
+        width: 50px!important;
+        height: 50px!important;
+    }
+
+    // Navigation overlay
+    .bk-extendednavigation.open + #page-zones__template-widgets__extendednavigation-header-nav-bk-overlay {
+        position: fixed!important;
+        left: inherit!important;
+        right: 0!important;
+        top: 85px!important;
+        width: 75%;
+        height: 100%!important;
+        width: 75%!important;
+        z-index: 99999!important;
+    }
+}
+
+
+
+// Slideshow
+// ---------------
+
+.home-page .responsiveslideshow {
+
+    .slides-list {
+        position: relative;
+        height: 650px;
+        height: 100vh;
+    }
+
+    // Overide the default display method to be able to transition
+    .slide-item {
+        display: list-item!important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        .transition(1s all ease-in-out);
+        visibility: hidden;
+
+        // The active state for the slideshows next and previous controls
+        &.current {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+    }
+
+    // Image element
+    figure {
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 0;
+        height: 100vh;
+    }
+
+    // Image title and description
+    .caption {
+        background-color: transparent;
+        bottom: 40px;
+        left: 40px;
+        right: 40px;
+        padding: 0;
+        text-align: left;
+        width: auto;
+
+        @media @tablet-860px {
+            max-width: 80%;
+        }
+
+        @media @mobile-650px {
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            max-width: 100%;
+        }
+
+        // Slideshow title
+        .image-title {
+            color: @color__slideshow-title--text;
+            font-family: @font__heading;
+            font-size: @font__feature-headline--font-size;
+            line-height: @font__feature-headline--line-height;
+            margin-bottom: 8px;
+
+            @media @mobile-650px {
+                font-size: bkscale(@font__feature-headline--font-size, 0.6);
+                line-height: bkscale(@font__feature-headline--line-height, 0.6);
+            }
+        }
+
+        // Slideshow title description
+        .image-description {
+            color: @color__slideshow-description--text;
+            font-size: @font__feature-strapline--font-size;
+            line-height: @font__feature-strapline--line-height;
+            text-align: uppercase;
+        }
+    }
+
+    // Navigation buttons
+    .slide-navigation {
+        bottom: 40px;
+        position: absolute;
+        right: 40px;
+        margin: 0;
+        z-index: 2;
+
+        @media @tablet-860px {
+            display: none;
+            visibility: hidden;
+        }
+
+        // Button styles
+        button {
+            background-color: transparent;
+            border-top: 2px solid fade(@font-swatch6-color, 20%);
+            border-bottom: 2px solid fade(@font-swatch6-color, 20%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            .transition(1s all ease-in-out);
+        }
+
+        // Button text
+        .control-text {
+            display: none;
+            height: 0;
+            visibility: hidden;
+        }
+
+        // Previous and next button
+        .previous-button,
+        .next-button {
+            height: 60px;
+            width: 65px;
+        }
+
+        // Next button
+        .next-button {
+            border-right: 2px solid fade(@font-swatch6-color, 20%);
+            margin-left: -4px;
+
+            &:after {
+                border-style: solid;
+                border-width: 8px 0 8px 10px;
+                border-color: transparent transparent transparent fade(@font-swatch6-color, 20%);
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 22px;
+                top: 21px;
+                .transition(0.75s border ease-in-out);
+            }
+
+            &:hover:after {
+                border-color: transparent transparent transparent @font-swatch6-color;
+            }
+        }
+
+        // Previous button
+        .previous-button {
+            border-left: 2px solid fade(@font-swatch6-color, 20%);
+            border-right: 2px solid fade(@font-swatch6-color, 20%);
+            margin-right: -3px;
+
+            &:before {
+                border-style: solid;
+                border-width: 8px 10px 8px 0;
+                border-color: transparent fade(@font-swatch6-color, 20%) transparent transparent;
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                right: 22px;
+                top: 21px;
+                .transition(0.75s border ease-in-out);
+            }
+
+            &:hover:before {
+                border-color: transparent @font-swatch6-color transparent transparent;
+            }
+        }
+
+        // If the pause button is visible add a border left to the next button
+        .previous-button + .pause-toggle + .next-button {
+            border-left: 2px solid fade(@font-swatch6-color, 20%);
+        }
+
+        // If the pause button isn't visible remove the minus margin
+        .previous-button + .previous-next {
+            margin-left: 0;
+        }
+
+        // If the previous and next buttons are visible then remove borders from the play/pause button
+        .previous-button + .pause-toggle {
+            border-left: 0;
+            border-right: 0;
+        }
+
+        // Pause button
+        .js-btn-play {
+            border-left: 2px solid fade(@font-swatch6-color, 20%);
+            border-right: 2px solid fade(@font-swatch6-color, 20%);
+            height: 60px;
+            width: 100px;
+            vertical-align: top;
+
+            &:after {
+                border-style: solid;
+                border-width: 11px 0 11px 13px;
+                border-color: transparent transparent transparent @font-swatch6-color;
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 38px;
+                top: 18px;
+            }
+
+            &:before {
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &.pause {
+                &:before, &:after {
+                    background-color: @font-swatch6-color;
+                    content: "";
+                    display: inline-block;
+                    margin: 0;
+                    opacity: 1;
+                    position: absolute;
+                    height: 20px;
+                    width: 3px;
+                    top: 19px;
+                    visibility: visible;
+                }
+                &:before {
+                    left: 40px;
+                }
+
+                &:after {
+                    border: none;
+                    left: 50px;
+                }
+            }
+        }
+    }
+
+    // Slide pagination
+    .slide-pagination {
+        bottom: 0;
+        .flex-display(inline-flex);
+        .flex-grow(1);
+        .align-items(center);
+        .align-content(center);
+        position: absolute;
+        right: 40px;
+        top: 0;
+        z-index: 2;
+
+        @media @mobile-650px {
+            right: 25px;
+        }
+
+        // Pagination list element
+        li.pagination-item {
+            display: block;
+            margin-bottom: 14px;
+
+            &.selected button {
+                background-color: @font-swatch6-color-hover;
+                border: none;
+                position: relative;
+            }
+        }
+
+        // Pagination button
+        button {
+            background-color: fade(@font-swatch6-color, 40%);
+            border: none;
+            overflow: hidden;
+            padding: 0;
+            .rotate(45deg);
+            text-indent: -9999px;
+            height: 13px;
+            width: 13px;
+        }
+    }
+}
+
+
+
+// Main
+// ---------------
+
+div[role="main"] {
+    padding: 3em 1em;
+
+    @media @tablet-860px {
+        padding: 3em 0;
+    }
+
+    @media @mobile-650px {
+        padding: 2em 0;
+    }
+
+    &.ecom-product {
+        min-height: 92vh;
+        padding: 0 1em 0 0;
+
+        @media @tablet-860px {
+            padding: 2em 25px;
+        }
+    }
+}
+
+
+
+// Profile widget
+// ---------------
+
+.default-profile div[data-widget-type="profile"] {
+    background-color: lighten(@color-swatch7, 5%);
+    border-top: 1px solid lighten(@color-swatch7, 2%);
+    padding: 55px 30px 50px;
+    text-align: center;
+
+    @media @mobile-650px {
+        padding: 35px 30px 35px;
+    }
+
+    .bk-profile {
+        margin: 0 auto;
+        max-width: 600px;
+
+        // Signup form
+        .signupform {
+
+            .form-body {
+                .flex-wrap(wrap);
+            }
+
+            // Show legend
+            .legend {
+                display: block;
+                visibility: visible;
+                float: left;
+                margin: 0 25px 0 0;
+                line-height: 60px;
+
+                @media @mobile-650px {
+                    font-size: bkscale(@font__h3--font-size, 0.9);
+                    line-height: bkscale(@font__h3--line-height, 0.95);
+                    float: none;
+                    margin: 0 0 15px 0;
+                }
+            }
+
+            // Hide label
+            .label {
+                display: none;
+                visibility: hidden;
+            }
+
+            // Form group
+            .form-group {
+                padding: 0;
+
+                @media @mobile-650px {
+                    .flex(1 0 auto);
+                }
+
+                // Bring button over input
+                &:last-child {
+                    margin-left: -1px;
+                }
+            }
+
+            // Form input
+            input {
+                border: 1px solid @color-swatch7;
+                height: 60px;
+            }
+
+            input[type="email"]:focus {
+                border: 1px solid darken(@color-swatch7, 8%);
+                box-shadow: none;
+            }
+
+            // Form button
+            button {
+                background-color: @color-swatch4;
+                color: white;
+                margin: 0;
+                height: 59px;
+
+                @media @mobile-650px {
+                    width: 100%;
+                }
+            }
+        }
+
+        // Remove padding from profile widget text
+        h2.headline, p.business {
+            padding-bottom: 0;
+        }
+
+        // Pushes Twitter username away from twitter bird
+        .account-name {
+            padding-right: 40px;
+        }
+    }
+}
+
+
+
+// Footer
+// ---------------
+
+.template-footer {
+    background-color: @color__footer--background;
+    border-top: 1px solid @color-swatch7;
+    padding: 30px 1em;
+    position: relative;
+
+    @media @mobile-650px {
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    // Flexbox positiong for footer elements
+    .container {
+        // Flex
+        .flex;
+        .flex-display;
+        .flex-wrap;
+
+        @media @mobile-650px {
+            display: block;
+        }
+    }
+
+    // Widgets grow to fill respective space
+    .widget {
+        .flex-grow(1);
+    }
+
+    // Keep footer widgets vertically aligned
+    div[data-widget-type="profile"], div[data-widget-type="companyaddress"] {
+        .align-self(center);
+    }
+
+    // Footer company address widget
+    div[data-widget-type="companyaddress"] {
+        padding-right: 10px;
+    }
+
+    // Footer profile widget
+    div[data-widget-type="profile"] {
+        padding-left: 10px;
+        text-align: right;
+
+        @media @mobile-650px {
+            text-align: center;
+        }
+    }
+
+    // Address widget styling
+    .address-line {
+        display: inline-block;
+
+        @media @mobile-650px {
+            text-align: center;
+        }
+    }
+
+    // Profile widget signup form styling
+    .signupform {
+        label {
+            display: none;
+            visibility: hidden;
+        }
+        button {
+            margin-top: 0;
+        }
+    }
+
+    .bk-profile {
+
+        // Remove padding from profile widget text
+        h2.headline, p.business {
+            padding-bottom: 0;
+        }
+
+        // Pushes Twitter username away from twitter bird
+        .account-name {
+            padding-right: 40px;
+        }
+    }
+
+    // Profile widget copyright styling
+    .copyright {
+        padding: 0;
+
+        @media @mobile-650px {
+            margin-top: 12px;
+            text-align: inherit;
+        }
+    }
+}
+
+
+
+// New colour variables
+// -----------------------
+
+@import "@{templateLocal}/less/variables.less";

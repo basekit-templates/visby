@@ -1,0 +1,55 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<!-- CONTAINER -->
+<div class="template-container">
+	<div class="home-page">
+
+		<!-- FULL SCREEN SLIDESHOW -->
+		{{widget('responsiveslideshow', 'slideshow', {
+			'duration':'4',
+			'transSpeed': '2000',
+			'transType': 'fade',
+			'showButtons': false,
+			'showBullets': true,
+			'allowPause': false,
+			'allowLoop': false,
+			'crop': true,
+			'images':[
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-5.jpg')
+			},
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-6.jpg')
+			}
+			]
+		})|raw}}
+
+		<!-- HEADER -->
+		{% include "includes/header.twig" %}
+		
+	</div>
+
+	<!-- MAIN SECTION -->
+	<div role="main" id="main">
+
+		<div class="container">
+
+			<!-- MAIN ZONE -->
+			{{zone('main')|raw}}
+
+		</div>
+
+	</div>
+
+	<!-- FOOTER -->
+	{% include "includes/footer.twig" %}
+
+</div>
+<!-- END CONTAINER -->
+
+{% endblock %}

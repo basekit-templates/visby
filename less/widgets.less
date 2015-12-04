@@ -1,0 +1,752 @@
+
+// -----------------------------
+// 	Widgets
+// -----------------------------
+
+//  1.   Contact Form
+//  2.   Twitter Widget
+//	3.	 Social Icons
+//	4.	 HR Line
+//	5.
+
+
+
+// -----------------------------
+//  1. Contact Form
+// -----------------------------
+
+.contactform {
+
+}
+
+
+
+// -----------------------------
+//  2. Twitter Widget
+// -----------------------------
+
+
+// Twitter widget container
+ul.tweet-list {
+	padding-left: 0;
+	margin-top: 65px;
+}
+
+// Single tweet
+.tweet-list li {
+	background-color: darken(@color__twitter-item--background, 2%);
+	border: 1px solid darken(@color__twitter-item--background, 10%);
+	margin-bottom: 25px;
+	.border-radius(6px);
+	padding: 25px;
+
+	/*
+	&:first-child .account-link {
+		top: -50px;
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 100%;
+
+		.account-link {
+			display: block;
+		}
+	}*/
+
+    &:first-child .tweet-content{
+
+        &:after {
+            color: darken(@color__twitter-item--background, 2%);
+            content: "\f099";
+            font-family: 'FontAwesome', sans-serif;
+            position: absolute;
+            left: 0;
+            top: -45px;
+            font-size: 30px;
+        }
+    }
+
+	/*
+	&:not(:first-child) .account-link {
+		display: none;
+		visibility: hidden;
+	}*/
+
+    .account-link {
+        display: none;
+        visibility: hidden;
+    }
+
+	// Re-add margin to final tweet
+	&:last-child {
+		margin-bottom: 25px;
+	}
+
+	// Adds chat style triangle to last tweet
+	&:last-child:after {
+		border-style: solid;
+		border-width: 0 30px 30px 0;
+		border-color: transparent rgb(250,250,250) transparent transparent;
+		content: "";
+		margin-top: 25px;
+		position: absolute;
+		right: 25px;
+		width: 0;
+		height: 0;
+	}
+
+	&:last-child:before {
+		  border-style: solid;
+		  border-width: 0 31px 30px 0;
+		  border-color: transparent rgb(225,225,225) transparent transparent;
+		  content: "";
+		  margin-top: 25px;
+		  position: absolute;
+		  right: 24px;
+		  width: 0;
+		  height: 0;
+		  position: absolute;
+		  bottom: -5px;
+	}
+}
+
+// Twitter account name styling
+.account-name {
+	font-family: @font__h2--font-family;
+	font-size: bkscale(@font__h2--font-size, 0.85);
+
+    @media @tablet-860px {
+        font-size: bkscale(@font__h2--font-size, 0.75);
+        line-height: bkscale(@font__h2--font-size, 0.75);
+    }
+
+	// Adds twitter icon to the right of the account name
+	&:after {
+		color: @color-swatch2;
+		content: "\f099";
+		font-family: 'FontAwesome', sans-serif;
+		position: absolute;
+		right: 0;
+	}
+}
+
+// Hide Twitter avatar
+.twitter__avatar {
+	display: none;
+	visibility: hidden;
+}
+
+// Tweet content
+.tweet-content {
+	//color: darken(@color__twitter-tweet--text, 10%);
+    line-height: bkscale(@font__p--line-height, 0.9);
+	padding-bottom: 10px;
+    word-break: break-word;
+}
+
+// Tweet metadata (Date and platform)
+.tweet-metadata {
+	font-size: bkscale(@font__p--font-size, 0.85);
+	font-style: italic;
+	time, span {
+		color: darken(@font-swatch5-color, 5%);
+	}
+}
+
+
+
+// -----------------------------
+//  3. Social Icons
+// -----------------------------
+
+
+// Hide social icons text
+.social-name {
+	display: none;
+	visibility: hidden;
+}
+
+// Social links background
+.social-link {
+    background-color: @color__socialicons--icon--background;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+
+	&:before {
+        color: @color__socialicons--icon;
+		font-size: 18px;
+		line-height: 40px;
+		margin: 0;
+	}
+
+	&:hover {
+		background-color: @color__socialicons--icon--background;
+		color: darken(@color__secondary, 20%);
+	}
+}
+
+
+
+// -----------------------------
+//  4. HR Line
+// -----------------------------
+
+hr.rule {
+	background-color: @color-swatch7;
+}
+
+
+
+// -----------------------------
+//  5. Company Address
+// -----------------------------
+
+.companyaddress {
+	p {
+		padding-bottom: 0.25em;
+	}
+}
+
+
+
+// -----------------------------
+//  6. Sign Up Widget
+// -----------------------------
+
+.signupform, .blogsearch {
+
+	.form-body {
+		.flex-display;
+
+        @media @mobile-650px {
+            display: block;
+        }
+	}
+
+	.form-group {
+		.flex-grow(0);
+
+		&:first-child {
+			.flex-grow(1);
+			padding-right: 15px;
+
+            @media @mobile-650px {
+                padding-right: 0;
+            }
+		}
+	}
+
+    // Hides Legend
+    legend {
+        display: none;
+        visibility: hidden;
+    }
+
+    // Brings button inline with input
+    .button {
+        margin-top: 37px;
+
+        @media @mobile-650px {
+            margin-top: 0;
+            width: 100%;
+        }
+    }
+}
+
+
+
+// -----------------------------
+//  7. Dropbox Widget
+// -----------------------------
+
+.dropbox {
+    // Dropbox Label
+    span.label {
+        margin-left: 6px;
+    }
+}
+
+
+
+
+// -----------------------------
+//  7. Image Widget
+// -----------------------------
+
+.imagewidget {
+	.image-title {
+		color: @color__image-title--text;
+		font-family: @font__h2--font-family;
+		font-size: @font__h4--font-size;
+		margin-bottom: 8px;
+	}
+	.image-description {
+        color: @color__image-description--text;
+		font-family: @font__body;
+		font-size: @font__p--font-size;
+	}
+}
+
+
+
+// -----------------------------
+// 6.  Gallery
+// -----------------------------
+
+
+// Gallery Layout
+// --------------
+
+.widget__gallery {
+    // Gallery List
+    .gallery-list {
+        .clearfix;
+        padding-top: 10px;
+        &:hover li {
+            opacity: 0.3;
+        }
+    }
+    // Gallery Item
+    .gallery-item {
+        display: inline-block;
+        float: left;
+        margin-right: 3.33%;
+        overflow: hidden;
+        position: relative;
+        width: 31%;
+        margin-bottom: 2%;
+        vertical-align: top;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+        // Display at 50% at tablet
+        @media @tablet-860px {
+            width: 48%;
+            &:nth-child(2n) {
+                margin-right: 0!important;
+            }
+            &:nth-child(3n) {
+                margin-right: 3.33%;
+            }
+        }
+        // Display at 100% at mobile
+        @media @mobile-650px {
+            margin-right: 0!important;
+            width: 100%;
+            margin-bottom: 4%;
+        }
+        .image-link {
+            -webkit-filter: grayscale(0%);
+            .transition(all 0.5s ease-in-out);
+        }
+        &:hover {
+            opacity: 1!important;
+
+            .image-link {
+                background-blend-mode: multiply;
+                opacity: 0.85;
+                -webkit-filter: grayscale(65%);
+                text-decoration: none;
+            }
+
+            figcaption {
+                background-color: fade(@color__gallery-caption--background, 85%);
+                height: 100%;
+                opacity: 1;
+                .transition(left 0.5s ease-in-out);
+                visibility: visible;
+                overflow: hidden;
+                left: 0;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 10px;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    .gradient(fade(@color-swatch4, 0%), fade(@color-swatch4, 10%));
+                }
+            }
+        }
+    }
+    .gallery__figure {
+        .transition(all 0.5s ease-in-out);
+    }
+
+    // Hide Figcaption
+    figcaption {
+        position: absolute;
+        display: block;
+        height: 0;
+        margin: 0;
+        padding: 0 30px;
+        opacity: 0;
+        text-align: left;
+        left: -100%;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        visibility: hidden;
+
+        @media @mobile-650px {
+            left: 0;
+        }
+
+        .caption-link {
+            .flex-display;
+            .flex-wrap(wrap);
+            .align-items(center);
+            .align-content(center);
+            height: 100%;
+            width: 100%;
+        }
+
+        .caption-link:hover {
+            text-decoration: none;
+        }
+
+        .image-title {
+            color: @color__gallery-title--text;
+            text-transform: uppercase;
+            font-family: @font__h4--font-family;
+            letter-spacing: 1px;
+            font-size: 15px;
+            line-height: 24px;
+            display: block;
+            width: 100%;
+            padding: 6px 0 5px;
+        }
+
+        .image-description {
+            color: darken(@color__gallery-description--text, 15%);
+            display: block;
+            font-size: 15px;
+            line-height: 23px;
+        }
+    }
+
+    // Use Background Image
+    .image-link {
+        display: block;
+        padding-bottom: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        // Hide Inline Image
+        .image {
+            display: none;
+        }
+    }
+}
+
+
+// Gallery Images
+// --------------
+
+// Use Background-image Method
+.gallery__image-link {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+// Hide Img Element
+.gallery__image {
+    display: none;
+}
+
+
+// Gallery Image Captions
+// ----------------------
+
+// Hide Caption
+.gallery__caption {
+    display: none;
+    margin: 0;
+    padding: 20px;
+    background-color: @color-swatch7;
+}
+
+// Show Caption
+.image-link:hover .image-gallery__caption {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+// -----------------------------
+// 7.  Slideshow
+// -----------------------------
+
+
+div[role="main"] {
+
+    // Slideshow Height
+    .responsiveslideshow,
+    .responsiveslideshow__figure {
+        position: relative;
+        height: 500px;
+
+        @media @tablet {
+            height: 350px;
+        }
+    }
+
+    .responsiveslideshow {
+        margin: 0 0 60px 0;
+
+        // Slide Caption
+        .caption {
+            background-color: fade(@color-swatch1, 75%);
+            display: inline-block;
+            margin: 0 auto;
+            max-width: 80%;
+            padding: 25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: auto;
+
+            @media @tablet {
+                max-width: 70%;
+            }
+
+            .image-title {
+                color: @color__slideshow-title--text;
+                font-size: bkscale(@font__h4--font-size, 0.9);
+                font-weight: @font__h3--font-weight;
+                line-height: bkscale(@font__h4--line-height, 0.9);
+                margin-bottom: 4px;
+
+                @media @tablet {
+                    font-size: bkscale(@font__h4--font-size, 0.9);
+                    line-height: bkscale(@font__h4--font-size, 0.9);
+                }
+            }
+            .image-description {
+                color: @color__slideshow-description--text;
+            }
+        }
+
+        // Slide Navigation Controls
+        .slide-navigation {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            margin: 0;
+            width: 100%;
+
+            button {
+                background-color: @color-swatch1;
+                color: @color-swatch4;
+                padding: 0;
+                position: absolute;
+                height: 100px;
+                width: 45px;
+                top: 200px;
+                .transition(all 0.5s ease);
+
+                @media @tablet {
+                    top: 125px;
+                }
+
+                .icon:before {
+                    margin-right: 0;
+                }
+            }
+
+            // Hides button control text (play, pause etc.)
+            button span.control-text {
+                display: none;
+            }
+
+            // Previous and next arrow styling
+            .previous-button,
+            .next-button {
+                &:before, &:after {
+                    font-size: 27px;
+                    margin: 0;
+                    vertical-align: middle;
+                }
+            }
+
+            // Previous arrow
+            .previous-button {
+                left: 0;
+
+                &:before {
+                    content: "\f104";
+                      margin-right: 5px;
+                }
+            }
+
+            // Next arrow
+            .next-button {
+                right: 0;
+
+                &:after {
+                    content: "\f105";
+                    margin-left: 5px;
+                }
+            }
+
+            // Pause button
+            .js-btn-play {
+                background-color: fade(white, 65%);
+                height: 58px;
+                width: 95px;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                top: 225px;
+                vertical-align: top;
+
+                &:after {
+                    border-style: solid;
+                    border-width: 11px 0 11px 13px;
+                    border-color: transparent transparent transparent @font-swatch6-color;
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    left: 38px;
+                    top: 18px;
+                }
+
+                &:before {
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                &.pause {
+                    &:before, &:after {
+                        background-color: @font-swatch6-color;
+                        content: "";
+                        display: inline-block;
+                        margin: 0;
+                        opacity: 1;
+                        position: absolute;
+                        height: 20px;
+                        width: 3px;
+                        top: 19px;
+                        visibility: visible;
+                    }
+                    &:before {
+                        left: 40px;
+                    }
+
+                    &:after {
+                        border: none;
+                        left: 50px;
+                    }
+                }
+            }
+        }
+
+        // Overlay Slide Pagination Over Image
+        .slide-pagination {
+            display: block;
+            margin: 25px 0;
+
+            // Restrict Width of Pagination
+            ul.pagination-list {
+                text-align: center;
+
+                @media @tablet {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+
+            li.pagination-item {
+                margin-bottom: 5px;
+                margin-left: 15px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.selected button {
+                     background-color: @font-swatch6-color-hover;
+                }
+            }
+
+            // Pagination button
+            button {
+                background-color: fade(@font-swatch6-color, 40%);
+                border: none;
+                overflow: hidden;
+                padding: 0!important;
+                .rotate(45deg);
+                text-indent: -9999px;
+                height: 13px;
+                width: 13px;
+            }
+        }
+    }
+
+    .responsiveslideshow {
+        .pause-toggle {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:hover .pause-toggle {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
+// -----------------------------
+//  1. Company Description
+// -----------------------------
+
+.companydescription h3 {
+    font-size: bkscale(@font__h4--font-size, 0.9);
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h4--line-height;
+}
+
+// -----------------------------
+//  1. Yelp Widget
+// -----------------------------
+
+.review-list {
+    margin-left: 0;
+
+    .review-title {
+        margin-bottom: 5px;
+    }
+
+    .author-label,
+    .review-author {
+        font-size: 21px;
+    }
+
+    .review-text {
+        padding: 10px 0px 2px;
+    }
+
+    .review-footer {
+        margin-top: 10px;
+
+        .timestamp {
+            font-size: 15px;
+        }
+    }
+
+    li {
+        list-style: none;
+    }
+}

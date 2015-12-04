@@ -1,0 +1,35 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<!-- CONTAINER -->
+<div class="template-container">
+	<div class="blogpost-page">
+
+	<!-- BLOG POST -->
+	{{widget('blogpost', 'singleblogpost', {})|raw}}
+
+	<!-- HEADER -->
+	{% include "includes/header.twig" %}
+
+	<!-- FOOTER -->
+	{% include "includes/footer.twig" %}
+
+	</div>
+</div>
+<!-- END CONTAINER -->
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- Background colour image checker
+	<script src="{{asset('js/background-check.js')}}"></script>
+
+	<script>
+	  $(document).ready(function(){
+	    $('.blogpost__image-link').colourBrightness();
+	    $('.dark').find('.template-nav').addClass('dark');
+	  });
+	</script>-->
+	
+{% endblock %}
