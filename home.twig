@@ -31,34 +31,36 @@
 
 	<!-- CONTAINER -->
 <div class="template-container">
+	<div class="slideshow-home">
 
-	<!-- FULL SCREEN SLIDESHOW -->
-	{{widget('responsiveslideshow', 'slideshow', {
-		'duration':'4',
-		'transSpeed': '2000',
-		'transType': 'fade',
-		'showButtons': false,
-		'showBullets': true,
-		'allowPause': false,
-		'allowLoop': false,
-		'crop': true,
-		'images':[
-		{
-			'imageHeight':'auto',
-			'imageWidth':'100%',
-			'url':asset('images/slide-5.jpg')
-		},
-		{
-			'imageHeight':'auto',
-			'imageWidth':'100%',
-			'url':asset('images/slide-6.jpg')
-		}
-		]
-	})|raw}}
+		<!-- FULL SCREEN SLIDESHOW -->
+		{{widget('responsiveslideshow', 'slideshow', {
+			'duration':'4',
+			'transSpeed': '2000',
+			'transType': 'fade',
+			'showButtons': false,
+			'showBullets': true,
+			'allowPause': false,
+			'allowLoop': false,
+			'crop': true,
+			'images':[
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-5.jpg')
+			},
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-6.jpg')
+			}
+			]
+		})|raw}}
 
-	<!-- HEADER -->
-	{% include "includes/header.twig" %}
+		<!-- HEADER -->
+		{% include "includes/header.twig" %}
 
+	</div>
 
 	<!-- MAIN SECTION -->
 	<div role="main" id="main">
