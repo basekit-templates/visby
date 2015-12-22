@@ -1,64 +1,38 @@
-<!doctype html>
-<!--[if lt IE 7]>
-	<html class="no-js ie6 oldie" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-	<html class="no-js ie7 oldie" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-	<html class="no-js ie8 oldie" lang="en">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js home-page" lang="{{ page.seoLang }}">
-<!--<![endif]-->
+{% extends "layout.twig" %}
+{% block content %}
 
-<head>
-	<meta charset="utf-8" />
-	<title>{{ page.title }}</title>
-	<meta name="keywords" content="{{ page.keywords }}" />
-	<meta name="description" content="{{ page.description }}" />
-
-	{% if site.favicon %}
-		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
-		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
-	{% endif %}
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-
-	{% include basekit.headScript %}
-</head>
-
-<body class="{{ page.backgroundClass }}">
-
-	<!-- CONTAINER -->
+<!-- CONTAINER -->
 <div class="template-container">
+	<div class="home-page">
 
-	<!-- FULL SCREEN SLIDESHOW -->
-	{{widget('responsiveslideshow', 'slideshow', {
-		'duration':'4',
-		'transSpeed': '2000',
-		'transType': 'fade',
-		'showButtons': false,
-		'showBullets': true,
-		'allowPause': false,
-		'allowLoop': false,
-		'crop': true,
-		'images':[
-		{
-			'imageHeight':'auto',
-			'imageWidth':'100%',
-			'url':asset('images/slide-5.jpg')
-		},
-		{
-			'imageHeight':'auto',
-			'imageWidth':'100%',
-			'url':asset('images/slide-6.jpg')
-		}
-		]
-	})|raw}}
+		<!-- FULL SCREEN SLIDESHOW -->
+		{{widget('responsiveslideshow', 'slideshow', {
+			'duration':'4',
+			'transSpeed': '2000',
+			'transType': 'fade',
+			'showButtons': false,
+			'showBullets': true,
+			'allowPause': false,
+			'allowLoop': false,
+			'crop': true,
+			'images':[
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-5.jpg')
+			},
+			{
+				'imageHeight':'auto',
+				'imageWidth':'100%',
+				'url':asset('images/slide-6.jpg')
+			}
+			]
+		})|raw}}
 
-	<!-- HEADER -->
-	{% include "includes/header.twig" %}
+		<!-- HEADER -->
+		{% include "includes/header.twig" %}
 
+	</div>
 
 	<!-- MAIN SECTION -->
 	<div role="main" id="main">
@@ -78,16 +52,13 @@
 </div>
 <!-- END CONTAINER -->
 
-    {% include basekit.bodyScript %}
+{% endblock %}
 
-	<!-- JQUERY -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <!-- PLUGINS -->
-    <script src="{{asset('js/main.js')}}"></script>
-
-	{% block scripts %}
-	{% endblock %}
-
-</body>
-</html>
+{% block scripts %}
+	<script>
+		$(".responsiveslideshow, .responsiveslideshow__figure").css("height", $(window).height());
+			$(window).bind("resize",function() {
+			$(".responsiveslideshow, .responsiveslideshow__figure").css("height", $(window).height());
+		});
+	</script>
+{% endblock %}
