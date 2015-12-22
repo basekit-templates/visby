@@ -92,7 +92,7 @@ div[data-widget-type="blogsearch"] {
     // Remove padding from profile widget text
     h2.headline, p.business {
         padding-bottom: 0;
-    } 
+    }
 
     // Pushes Twitter username away from twitter bird
     .account-name {
@@ -220,7 +220,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 
 			@media @tablet-860px {
 				margin: 25px 0 0;
-			}	
+			}
 		}
 	}
 
@@ -238,7 +238,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	@media @tablet-860px {
 		padding-left: 0;
 	}
-} 
+}
 
 .blogpostlist .post-article > .post-image ~ .post-content {
 	padding-left: 65px;
@@ -246,7 +246,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	@media @tablet-860px {
 		padding: 12px 0 0;
 	}
-} 
+}
 
 // Pagination
 
@@ -268,11 +268,15 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	.post-image {
 
 		.image-link {
-			background-color: @color-swatch3;
+			background-color: transparent;
 			background-size: cover;
 			background-position: center center;
-			height: 600px;
+			min-height: 650px;
+			position: relative;
+			height: 650px;
+			height: 65vh;
 			.transition(none);
+			-webkit-filter: grayscale(20%);
 
 			@media @tablet-860px {
 				height: 500px;
@@ -283,6 +287,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			}
 
 			&:before {
+				background-color: fade(black, 40%);
 				content: "";
 				position: absolute;
 				top: 0;
@@ -298,7 +303,26 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
+	.post-header {
+		position: absolute;
+		top: 0;
+		height: 65vh;
+		min-height: 650px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		.flex-display;
+		.align-items(center);
+		.justify-content(center);
+	}
+
 	.post-title {
+		color: white;
+		font-size: 46px;
+		font-weight: 400;
+		-webkit-font-smoothing: antialiased;
+
 		@media @mobile-650px {
 			font-size: bkscale(@font__h1--font-size, 0.75);
 			line-height: bkscale(@font__h1--line-height, 0.78);
@@ -421,28 +445,22 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 }
 
 .blogpost .post-article > .post-image ~ .post-footer {
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.7) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.7))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,0.5) 100%,rgba(0,0,0,0.7) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,0.5) 100%,rgba(0,0,0,0.7) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(0,0,0,0) 10%,rgba(0,0,0,0.5) 100%,rgba(0,0,0,0.7) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,0.5) 100%,rgba(0,0,0,0.7) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 	.flex-display;
 	.justify-content(flex-end);
 	-ms-flex-pack: end;
-	height: 200px;
+	height: 65vh;
 	padding: 0;
 	position: absolute;
+	min-height: 650px;
 	max-width: 100%;
 	padding: 10px 25px 10px 140px;
 	left: 0;
 	right: 0;
-	top: 400px;
+	top: 0;
 
 	@media @tablet-860px {
 		.flex(0 100%);
-		top: 300px;
+		top: 0;
 	}
 
 	@media @mobile-650px {
