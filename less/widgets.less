@@ -38,7 +38,7 @@ ul.tweet-list {
 	border: 1px solid darken(@color__twitter-item--background, 10%);
 	margin-bottom: 25px;
 	.border-radius(6px);
-	padding: 25px;
+	padding: 28px 25px 25px;
 
 	/*
 	&:first-child .account-link {
@@ -56,7 +56,7 @@ ul.tweet-list {
     &:first-child .tweet-content{
 
         &:after {
-            color: darken(@color__twitter-item--background, 2%);
+            color: darken(@color__twitter-item--background, 20%);
             content: "\f099";
             font-family: 'FontAwesome', sans-serif;
             position: absolute;
@@ -122,7 +122,7 @@ ul.tweet-list {
 
 	// Adds twitter icon to the right of the account name
 	&:after {
-		color: @color-swatch2;
+		color: red;
 		content: "\f099";
 		font-family: 'FontAwesome', sans-serif;
 		position: absolute;
@@ -138,9 +138,9 @@ ul.tweet-list {
 
 // Tweet content
 .tweet-content {
-	//color: darken(@color__twitter-tweet--text, 10%);
+	color: darken(@color__p--text, 15%);
     line-height: bkscale(@font__p--line-height, 0.9);
-	padding-bottom: 10px;
+	padding-bottom: 5px;
     word-break: break-word;
 }
 
@@ -149,7 +149,7 @@ ul.tweet-list {
 	font-size: bkscale(@font__p--font-size, 0.85);
 	font-style: italic;
 	time, span {
-		color: darken(@font-swatch5-color, 5%);
+		color: @font-swatch5-color;
 	}
 }
 
@@ -423,8 +423,8 @@ hr.rule {
         .image-description {
             color: darken(@color__gallery-description--text, 15%);
             display: block;
-            font-size: 15px;
-            line-height: 23px;
+            font-size: 16px;
+            line-height: 24px;
         }
     }
 
@@ -505,22 +505,19 @@ div[role="main"] {
 
         // Slide Caption
         .caption {
-            background-color: fade(@color-swatch1, 75%);
-            display: inline-block;
+            background-color: transparent;
+            bottom: -118px;
+            display: block;
             margin: 0 auto;
-            max-width: 80%;
+            width: 100%;
             padding: 25px;
             left: 0;
             right: 0;
             text-align: center;
             width: auto;
 
-            @media @tablet {
-                max-width: 70%;
-            }
-
             .image-title {
-                color: @color__slideshow-title--text;
+                color: @font__h2--color;
                 font-size: bkscale(@font__h4--font-size, 0.9);
                 font-weight: @font__h3--font-weight;
                 line-height: bkscale(@font__h4--line-height, 0.9);
@@ -532,7 +529,7 @@ div[role="main"] {
                 }
             }
             .image-description {
-                color: @color__slideshow-description--text;
+                color: @font__p--color;
             }
         }
 
@@ -600,9 +597,9 @@ div[role="main"] {
 
             // Pause button
             .js-btn-play {
-                background-color: fade(white, 65%);
-                height: 58px;
-                width: 95px;
+                background-color: @font-swatch6-color;
+                height: 60px;
+                width: 60px;
                 margin: 0 auto;
                 left: 0;
                 right: 0;
@@ -612,13 +609,14 @@ div[role="main"] {
                 &:after {
                     border-style: solid;
                     border-width: 11px 0 11px 13px;
-                    border-color: transparent transparent transparent @font-swatch6-color;
+                    border-color: transparent transparent transparent @color-swatch4;
                     content: "";
                     position: absolute;
                     width: 0;
                     height: 0;
-                    left: 38px;
-                    top: 18px;
+                    left: 0;
+                    right: 0;
+                    top: 20px;
                 }
 
                 &:before {
@@ -629,7 +627,7 @@ div[role="main"] {
 
                 &.pause {
                     &:before, &:after {
-                        background-color: @font-swatch6-color;
+                        background-color: @color-swatch4;
                         content: "";
                         display: inline-block;
                         margin: 0;
@@ -641,12 +639,12 @@ div[role="main"] {
                         visibility: visible;
                     }
                     &:before {
-                        left: 40px;
+                        left: 23px;
                     }
 
                     &:after {
                         border: none;
-                        left: 50px;
+                        left: 34px;
                     }
                 }
             }
@@ -655,7 +653,10 @@ div[role="main"] {
         // Overlay Slide Pagination Over Image
         .slide-pagination {
             display: block;
-            margin: 25px 0;
+            margin: 0;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
 
             // Restrict Width of Pagination
             ul.pagination-list {
@@ -668,8 +669,8 @@ div[role="main"] {
             }
 
             li.pagination-item {
-                margin-bottom: 5px;
-                margin-left: 15px;
+                margin-bottom: 0;
+                margin-left: 10px;
 
                 &:first-child {
                     margin-left: 0;
@@ -682,14 +683,13 @@ div[role="main"] {
 
             // Pagination button
             button {
-                background-color: fade(@font-swatch6-color, 40%);
-                border: none;
-                overflow: hidden;
+                background-color: transparent;
+                border: 2px solid white;
+                .border-radius(100px);
                 padding: 0!important;
-                .rotate(45deg);
                 text-indent: -9999px;
-                height: 13px;
-                width: 13px;
+                height: 12px;
+                width: 12px;
             }
         }
     }

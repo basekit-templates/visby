@@ -50,6 +50,9 @@
 // Global
 // ---------------
 
+.widget {
+    margin: 100px 0;
+}
 
 // Container
 .container {
@@ -80,10 +83,10 @@ body {
 legend {
     color: @color__form-legend--text;
     font-family: @font__h2--font-family;
-    font-size: bkscale(@font__h3--font-size, 0.98);
+    font-size: @font__h3--font-size;
     font-weight: @font__h4--font-weight;
     line-height: @font__h2--line-height;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     @media @mobile-650px {
         font-size: bkscale(@font__h3--font-size, 0.8);
@@ -94,9 +97,11 @@ legend {
 // Labels
 label {
     color: @color__form-label--text;
+    font-family: @font-swatch4-font-family;
     font-size: bkscale(@font__button--font-size, 0.9);
     font-weight: @font__button--font-weight;
     letter-spacing: 1px;
+    margin-bottom: 4px;
     text-transform: uppercase;
 }
 
@@ -107,11 +112,12 @@ input[type="password"],
 textarea,
 .input--single-line {
     border: 2px solid #ddd;
+    color: darken(@color__p--text, 20%);
     font-size: bkscale(@font__p--font-size, 0.95);
     padding: 10px;
     -webkit-appearance: none;
     &:focus {
-        border-color: @color__secondary;
+        border-color: #C1C1C1;
         box-shadow: inset 0 0px 10px rgba(240,240,240, 0.5);
         .transition(.3s all ease-in);
     }
@@ -171,7 +177,7 @@ button,
 
     &:hover {
         background-color: darken(@color__button--background--hover, 10%);
-        color: darken(@color-swatch2, 20%);
+        color: darken(@color-swatch2, 40%);
     }
 }
 
@@ -346,6 +352,8 @@ button,
         word-wrap: break-word;
         white-space: normal;
         line-height: 26px;
+        text-transform: uppercase;
+        -webkit-font-smoothing: subpixel-antialiased;
     }
 
     .item-name:hover {
@@ -383,7 +391,7 @@ button,
 
         // Navigation dropdown arrow
         span.item-name:after {
-            color: fade(@color-swatch6, 45%);
+            color: fade(@color__navigation--text, 75%);
             content: "\f0dd";
             font-family: FontAwesome;
             font-size: 14px;
@@ -625,8 +633,24 @@ div[data-widget-type="extendednavigation"] {
     figure {
         background-position: center;
         background-repeat: no-repeat;
+        .flex-display;
+        .align-items(center);
+        .justify-content(center);
         min-height: 0;
         height: 100vh;
+
+        &:after {
+            background-color: fade(black, 50%);
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom; 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
     }
 
     // Image title and description
@@ -636,8 +660,10 @@ div[data-widget-type="extendednavigation"] {
         left: 40px;
         right: 40px;
         padding: 0;
-        text-align: left;
+        position: initial;
+        text-align: center;
         width: auto;
+        z-index: 2;
 
         @media @tablet-860px {
             max-width: 80%;
@@ -675,10 +701,10 @@ div[data-widget-type="extendednavigation"] {
 
     // Navigation buttons
     .slide-navigation {
-        bottom: 40px;
         position: absolute;
-        right: 40px;
+        top: 45%;
         margin: 0;
+        width: 100%;
         z-index: 2;
 
         @media @tablet-860px {
@@ -689,8 +715,6 @@ div[data-widget-type="extendednavigation"] {
         // Button styles
         button {
             background-color: transparent;
-            border-top: 2px solid fade(@font-swatch6-color, 20%);
-            border-bottom: 2px solid fade(@font-swatch6-color, 20%);
             color: white;
             position: relative;
             overflow: hidden;
@@ -707,25 +731,26 @@ div[data-widget-type="extendednavigation"] {
         // Previous and next button
         .previous-button,
         .next-button {
+            padding: 0 5px;
+            position: absolute;
             height: 60px;
-            width: 65px;
+            width: 45px;
         }
 
         // Next button
         .next-button {
-            border-right: 2px solid fade(@font-swatch6-color, 20%);
-            margin-left: -4px;
+            right: 30px;
 
             &:after {
                 border-style: solid;
                 border-width: 8px 0 8px 10px;
-                border-color: transparent transparent transparent fade(@font-swatch6-color, 20%);
+                border-color: transparent transparent transparent fade(@font-swatch6-color, 60%);
                 content: "";
                 position: absolute;
                 width: 0;
                 height: 0;
-                left: 22px;
-                top: 21px;
+                right: 0;
+                top: 17px;
                 .transition(0.75s border ease-in-out);
             }
 
@@ -736,20 +761,18 @@ div[data-widget-type="extendednavigation"] {
 
         // Previous button
         .previous-button {
-            border-left: 2px solid fade(@font-swatch6-color, 20%);
-            border-right: 2px solid fade(@font-swatch6-color, 20%);
-            margin-right: -3px;
+            left: 30px;
 
             &:before {
                 border-style: solid;
                 border-width: 8px 10px 8px 0;
-                border-color: transparent fade(@font-swatch6-color, 20%) transparent transparent;
+                border-color: transparent fade(@font-swatch6-color, 60%) transparent transparent;
                 content: "";
                 position: absolute;
                 width: 0;
                 height: 0;
-                right: 22px;
-                top: 21px;
+                left: 0;
+                top: 17px;
                 .transition(0.75s border ease-in-out);
             }
 
@@ -758,29 +781,15 @@ div[data-widget-type="extendednavigation"] {
             }
         }
 
-        // If the pause button is visible add a border left to the next button
-        .previous-button + .pause-toggle + .next-button {
-            border-left: 2px solid fade(@font-swatch6-color, 20%);
-        }
-
-        // If the pause button isn't visible remove the minus margin
-        .previous-button + .previous-next {
-            margin-left: 0;
-        }
-
-        // If the previous and next buttons are visible then remove borders from the play/pause button
-        .previous-button + .pause-toggle {
-            border-left: 0;
-            border-right: 0;
-        }
-
         // Pause button
         .js-btn-play {
-            border-left: 2px solid fade(@font-swatch6-color, 20%);
-            border-right: 2px solid fade(@font-swatch6-color, 20%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            padding: 0 5px;
             height: 60px;
-            width: 100px;
-            vertical-align: top;
+            width: 65px;
 
             &:after {
                 border-style: solid;
@@ -790,7 +799,9 @@ div[data-widget-type="extendednavigation"] {
                 position: absolute;
                 width: 0;
                 height: 0;
-                left: 38px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
                 top: 18px;
             }
 
@@ -827,42 +838,46 @@ div[data-widget-type="extendednavigation"] {
 
     // Slide pagination
     .slide-pagination {
-        bottom: 0;
-        .flex-display(inline-flex);
-        .flex-grow(1);
-        .align-items(center);
-        .align-content(center);
+        bottom: 25px;
         position: absolute;
-        right: 40px;
-        top: 0;
+        left: 0;
+        right: 0;
         z-index: 2;
 
         @media @mobile-650px {
             right: 25px;
         }
 
+        ul.pagination-list {
+            text-align: center;
+            width: 100%;
+        }
+
         // Pagination list element
         li.pagination-item {
-            display: block;
-            margin-bottom: 14px;
+            display: inline-block;
+            margin-right: 5px;
 
             &.selected button {
-                background-color: @font-swatch6-color-hover;
-                border: none;
+                background-color: white;
+                border: 2px solid white;
                 position: relative;
             }
         }
 
         // Pagination button
         button {
-            background-color: fade(@font-swatch6-color, 40%);
-            border: none;
-            overflow: hidden;
+            background-color: transparent;
+            border: 2px solid fade(white, 70%);
+            .border-radius(100px);
             padding: 0;
-            .rotate(45deg);
             text-indent: -9999px;
             height: 13px;
             width: 13px;
+
+            &:hover {
+                border: 2px solid white;
+            }
         }
     }
 }
