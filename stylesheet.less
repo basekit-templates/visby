@@ -50,6 +50,9 @@
 // Global
 // ---------------
 
+.widget {
+    margin: 100px 0;
+}
 
 // Container
 .container {
@@ -317,7 +320,7 @@ button,
             color: @color__navigation--text--selected;
         }
         .item-name {
-            color: fade(@color__navigation--text, 80%);
+            color: fade(@color__navigation--text, 65%);
 
             &:hover {
                 color: @color__navigation--text--hover;
@@ -911,14 +914,9 @@ div[role="main"] {
 // ---------------
 
 .default-profile div[data-widget-type="profile"] {
-    background-color: lighten(@color-swatch7, 5%);
-    border-top: 1px solid lighten(@color-swatch7, 2%);
-    padding: 55px 30px 50px;
+    background-color: darken(@color__footer--background, 5%);
+    padding: 35px 30px 28px;
     text-align: center;
-
-    @media @mobile-650px {
-        padding: 35px 30px 35px;
-    }
 
     .bk-profile {
         margin: 0 auto;
@@ -1010,7 +1008,6 @@ div[role="main"] {
 
 .template-footer {
     background-color: @color__footer--background;
-    border-top: 1px solid @color-swatch7;
     padding: 30px 1em;
     position: relative;
 
@@ -1106,4 +1103,4 @@ div[role="main"] {
 // -----------------------
 
 @import "@{templateLocal}/less/variables.less";
-//@import "@{templateLocal}/bk-v8-test.less";
+@import "@{templateLocal}/bk-v8-test.less";

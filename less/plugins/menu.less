@@ -5,7 +5,7 @@
 
 //  1.   Menu Navigation
 //  2.   Menu Styles
-//  3.   Menu 
+//  3.   Menu
 
 
 
@@ -14,9 +14,6 @@
 // -----------------------------
 
 .menusections {
-	ul {
-		text-transform: uppercase;
-	}
 	li.menusections-item {
 		font-size: 14px;
 		&:after {
@@ -37,6 +34,8 @@
 
 	a.menu-item-name {
 		color: @font-swatch6-color;
+		font-family: @font__p--font-family;
+		font-size: 18px;
 		font-weight: @font__navigation--font-weight;
 		&:hover {
 			color: @font-swatch6-color-hover;
@@ -44,7 +43,7 @@
 	}
 }
 
-.menu-items:not(.menu-section--subsection), 
+.menu-items:not(.menu-section--subsection),
 .menu-list {
 	column-count: 3;
 	column-gap: 50px;
@@ -88,13 +87,14 @@
 	h3.item-title {
 		color: @font-swatch3-color;
 		font-family: @font__h2--font-family;
+		font-size: @font-swatch4-font-size;
 		font-weight: @font__h2--font-weight;
 		padding-bottom: 5px;
 	}
 
 	p.item-price {
-		font-family: @font__h2--font-family;
-		font-size: bkscale(@font__h4--font-size, 0.92);
+		font-family: @font__p-font-family;
+		font-size: bkscale(@font__p--font-size, 1.05);
 		font-weight: @font__h2--font-weight;
 		line-height: bkscale(@font__h4--line-height, 0.92);
 	}
@@ -127,15 +127,17 @@
 	li.dietary-item {
 		border: 2px solid @color-swatch7;
 		color: @color__secondary;
+		font-family: @font-swatch4-font-family;
 		font-size: 11px;
 		font-weight: 700;
 		padding: 0 10px;
+		letter-spacing: 1px;
 		margin-bottom: 5px;
 		margin-right: 0;
 		text-transform: uppercase;
 
 		// Removes gap from inline-block
-		&:nth-child(n+2) {	
+		&:nth-child(n+2) {
 			margin-left: -5px;
 		}
 	}
@@ -162,7 +164,7 @@
 			border-left: none;
 		}
 
-		&:nth-child(n+2) {	
+		&:nth-child(n+2) {
 			margin-left: -4px;
 		}
 	}
