@@ -4,7 +4,7 @@
     "screenshot" : "visby-screenshot.png",
     "widgetVersion": 2,
     "templateType":"standard",
-    "pageTypes": ["home", "blogpost", "blogpostlist", "ecomproduct", "ecomproductlist"],
+    "pageTypes": ["home", "blogpost", "blogpostlist", "ecomproduct", "ecomproductslist"],
     "images":[
         "images/logo.png",
         "images/slide-1.jpg",

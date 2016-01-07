@@ -69,6 +69,7 @@ h4 {
 
 h5 {
 	font-size: bkscale(@font__h4--font-size, 0.8);
+	font-weight: 400;
 	line-height: bkscale(@font__h4--line-height, 0.8);
 	@media @mobile-650px  {
 		font-size: bkscale(@font__h3--font-size, 0.75);
@@ -184,13 +185,14 @@ blockquote {
 			list-style: none;
 			position: relative;
 			&:before {
-				color: @color__secondary;
-				content: "\25c6";
-				font-family: 'FontAwesome', sans-serif;
-				font-size: 16px;
-				margin-top: -2px;
+				.border-radius(100px);
+				background-color: @color__secondary;
+				content: "";
+				height: 6px;
+				width: 6px;
 				position: absolute;
 				left: -28px;
+				top: 14px;
 			}
 		}
 	}

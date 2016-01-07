@@ -174,7 +174,7 @@ ul.tweet-list {
 	text-align: center;
 
 	&:before {
-        color: @color__button--text": "@color__secondary;
+        color: @color__button--text";
 		font-size: 18px;
 		line-height: 40px;
 		margin: 0;
@@ -541,7 +541,7 @@ div[role="main"] {
             width: 100%;
 
             button {
-                background-color: @color-swatch1;
+                background-color: @color__body--background;
                 color: @color-swatch4;
                 padding: 0;
                 position: absolute;
@@ -596,7 +596,7 @@ div[role="main"] {
 
             // Pause button
             .js-btn-play {
-                background-color: @font-swatch6-color;
+                background-color: @color__body--background;
                 height: 60px;
                 width: 60px;
                 margin: 0 auto;
@@ -610,6 +610,7 @@ div[role="main"] {
                     border-width: 11px 0 11px 13px;
                     border-color: transparent transparent transparent @color-swatch4;
                     content: "";
+                    margin: 0 auto;
                     position: absolute;
                     width: 0;
                     height: 0;
@@ -633,17 +634,17 @@ div[role="main"] {
                         opacity: 1;
                         position: absolute;
                         height: 20px;
-                        width: 3px;
-                        top: 19px;
+                        width: 4px;
+                        top: 20px;
                         visibility: visible;
                     }
                     &:before {
-                        left: 23px;
+                        left: 22px;
                     }
 
                     &:after {
                         border: none;
-                        left: 34px;
+                        left: 33px;
                     }
                 }
             }
@@ -676,7 +677,7 @@ div[role="main"] {
                 }
 
                 &.selected button {
-                     background-color: @font-swatch6-color-hover;
+                     background-color: white;
                 }
             }
 
