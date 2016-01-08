@@ -122,16 +122,16 @@
             "background-color-hover": "darken(@color-swatch3, 10%)"
         },
         "font8": {
-            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-family": "\"Playfair Display\", \"Futura\", Helvetica Neue, sans-serif",
             "font-size": "52px",
-            "font-weight": "700",
+            "font-weight": "400",
             "line-height": "60px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
         "font9": {
             "font-family": "\"Georgia\", serif",
-            "font-size": "18px",
+            "font-size": "20px",
             "font-weight": "inherit",
             "line-height": "32px",
             "color": "lighten(@color-swatch4, 10%)",
@@ -139,9 +139,9 @@
         },
         "font10": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
-            "font-size": "20px",
+            "font-size": "22px",
             "font-weight": "700",
-            "line-height": "26px",
+            "line-height": "28px",
             "color": "@color-swatch6",
             "letter-spacing": "1px"
         }
@@ -234,7 +234,7 @@
         },
         "forms": {
             "color__form-legend--text": "@font-swatch2-color",
-            "color__form-label--text": "#A5A5A5"
+            "color__form-label--text": "#969494"
         },
         "image": {
             "color__image-title--text": "@font-swatch2-color",

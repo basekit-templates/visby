@@ -33,7 +33,7 @@
 	overflow: hidden;
 	.transition(width 0.35s ease-in-out);
 
-	@media @tablet {
+	@media @tablet-860px {
 		background-color: @color-swatch1;
 		display: block;
 		position: fixed;
@@ -69,7 +69,7 @@
 }
 
 .nav-open .ecombasket {
-	@media @tablet {
+	@media @tablet-860px {
 		right: 0;
 	}
 }
@@ -95,7 +95,7 @@
 	visibility: visible;
 	z-index: 9999;
 
-	@media @tablet {
+	@media @tablet-860px {
 		padding: 30px 30px 100px;
 	}
 
@@ -160,7 +160,7 @@ button.basket-toggle {
 }
 
 .basket-open.nav-open button.basket-toggle {
-	@media @tablet {
+	@media @tablet-860px {
 		background-color: white;
 		background-image: image('/images/basket-icon.png');
 		background-image: image('/images/basket-icon.svg'), none;
@@ -198,7 +198,7 @@ button.basket-toggle,
 	padding-left: 50px;
 	position: relative;
 
-	@media @tablet {
+	@media @tablet-860px {
 		position: fixed;
 		bottom: 25px;
 		right: -80%;
@@ -224,7 +224,7 @@ button.basket-toggle,
 .nav-open button.basket-toggle,
 .basket-open.nav-open .bk-selected .basket-toggle,
 .nav-open .bk-selected .basket-toggle {
-	@media @tablet {
+	@media @tablet-860px {
 		background-color: @font-swatch6-color-hover;
 		background-image: image('/images/basket-icon-white.png');
 		background-image: image('/images/basket-icon-white.svg'), none;
@@ -241,7 +241,7 @@ button.basket-toggle,
 	height: 55px;
 	width: 55px;
 
-	@media @tablet {
+	@media @tablet-860px {
 		height: 60px!important;
 		width: 160px!important;
 		position: fixed!important;
@@ -283,7 +283,7 @@ button.basket-toggle,
 	margin-bottom: 25px;
 	padding-top: 20px;
 
-	@media @tablet {
+	@media @tablet-860px {
 		.flex-wrap(wrap);
 	}
 
@@ -333,13 +333,12 @@ button.basket-toggle,
 		color: @font-swatch4-color;
 		display: block;
 		font-family: @font__h2--font-family;
-		font-size: 28px;
+		font-size: 26px;
 		line-height: 32px;
-		font-weight: 600;
 		margin: 5px 0;
 
 		@media @mobile-650px {
-			font-size: 23px;
+			font-size: 22px;
 			line-height: 27px;
 		}
 	}
@@ -918,9 +917,9 @@ form.ecomproductslist__form {
 		.flex-display;
 		.align-items(center);
 		position: relative;
-		min-height: 90vh;
+		min-height: 86vh;
 
-		@media @tablet {
+		@media @tablet-860px {
 			display: block;
 			min-height: auto;
 		}
@@ -935,7 +934,7 @@ form.ecomproductslist__form {
 	.product-image {
 		display: none;
 
-		@media @tablet {
+		@media @tablet-860px {
 			display: block;
 			padding-bottom: 20px;
 		}
@@ -966,7 +965,7 @@ form.ecomproductslist__form {
 		overflow: hidden;
 		overflow-y: scroll;
 
-		@media @tablet {
+		@media @tablet-860px {
 			position: relative;
 			width: 100%;
 		}
@@ -983,7 +982,7 @@ form.ecomproductslist__form {
 		position: relative;
 		height: 100%;
 
-		@media @tablet {
+		@media @tablet-860px {
 			background-color: transparent;
 			margin: 30px 0;
 		}
@@ -1000,7 +999,7 @@ form.ecomproductslist__form {
 			cursor: pointer;
 			margin-top: 25px;
 
-			@media @tablet {
+			@media @tablet-860px {
 				background-color: transparent;
 				line-height: 100px;
 				height: 100px;
@@ -1042,7 +1041,7 @@ form.ecomproductslist__form {
 		padding: 40px 30px 40px 55%;
 		max-width: 1200px;
 
-		@media @tablet {
+		@media @tablet-860px {
 			padding: 10px 0 20px;
 			max-width: 100%;
 		}
@@ -1197,7 +1196,7 @@ form.ecomproductslist__form {
 		margin: 12px 0 30px;
 		padding: 0 20px 0 40px;
 
-		@media @tablet {
+		@media @tablet-860px {
 			font-size: 16px;
 			margin: 10px 0 25px;
 			padding: 3px 20px 5px 40px;
@@ -1376,4 +1375,39 @@ form.ecomproductslist__form {
 
 .no-image {
 	background-image: none;
+}
+
+.ecomcategorieslist {
+	ul.category-list {
+		list-style: none;
+		margin-left: 0;
+	}
+	li.category-item {
+		display: inline-block;
+		font-size: 14px;
+		&:after {
+			color: lighten(@font-swatch5-color, 25%);
+			content: "\25C7";
+			display: inline-block;
+			font-family: Font Awesome;
+			font-size: 18px;
+			margin: 0 15px;
+			position: relative;
+		}
+
+		&:last-child:after {
+			display: none;
+			visibility: hidden;
+		}
+
+		a.category-link {
+			color: @font-swatch6-color;
+			font-family: @font__p--font-family;
+			font-size: 18px;
+			font-weight: @font__navigation--font-weight;
+			&:hover {
+				color: @font-swatch6-color-hover;
+			}
+		}
+	}
 }
