@@ -168,6 +168,7 @@ button,
 .button {
     background-color: @color__button--background;
     color: @color__button--text;
+    font-size: @font__button--font-size;
     font-weight: @font__button--font-weight;
     letter-spacing: @font__button--letter-spacing;
     padding: 11px 20px;
@@ -353,18 +354,18 @@ button,
     }
 
     .ecombasket:before {
-        background-color: fade(white, 20%);
+        background-color: white;
     }
 
     .navigation-toggle:after,
     .navigation-toggle:before {
-        background-color: fade(white, 80%);
+        background-color: white;
     }
 
     .navigation-toggle {
 
     // Displays as icon's middle bar
-        background-color: fade(white, 80%);
+        background-color: white;
     }
 }
 
@@ -513,12 +514,12 @@ div[data-widget-type="extendednavigation"] {
         background-color: darken(@color__navigation--text--hover, 10%);
         background-clip: content-box;
         display: inline-block;
-        height: 47px;
+        height: 46px;
         margin: 0;
-        padding: 22px 10px 22px 15px;
+        padding: 22px 10px 22px 13px;
         position: absolute;
         right: 10px;
-        top: 0;
+        top: -6px;
         text-indent: -9999px;
         .transition(background-color 0s ease-in);
         width: 50px;
@@ -527,7 +528,7 @@ div[data-widget-type="extendednavigation"] {
         // Top and bottom navigation item bar
         &:after, &:before {
             content: "";
-            height: 3px;
+            height: 2px;
             width: 30px;
             position: absolute;
             left: 10px;
@@ -693,10 +694,10 @@ div[data-widget-type="extendednavigation"] {
             width: 100%;
             z-index: 1;
 
-            @media @tablet-860px {
-                -webkit-box-shadow: inset 0px 0px 250px 0px rgba(0,0,0,0.3);
-                -moz-box-shadow: inset 0px 0px 250px 0px rgba(0,0,0,0.3);
-                box-shadow: inset 0px 0px 250px 0px rgba(0,0,0,0.3);
+            @media only screen and (max-width: 1024px) {
+                -webkit-box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,0.3);
+                -moz-box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,0.3);
+                box-shadow: inset 0px 0px 300px 0px rgba(0,0,0,0.3);
             }
         }
     }
@@ -704,11 +705,10 @@ div[data-widget-type="extendednavigation"] {
     // Image title and description
     .caption {
         background-color: transparent;
-        bottom: 40px;
-        left: 40px;
-        right: 40px;
-        padding: 0;
-        position: initial;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        position: relative;
         text-align: center;
         width: auto;
         z-index: 2;
@@ -772,7 +772,6 @@ div[data-widget-type="extendednavigation"] {
             background-color: transparent;
             color: white;
             position: relative;
-            overflow: hidden;
             .transition(1s all ease-in-out);
         }
 
@@ -846,7 +845,8 @@ div[data-widget-type="extendednavigation"] {
             width: 55px;
 
             @media @tablet-860px {
-                right: 25px;
+                display: none;
+                visibility: hidden;
             }
 
             &:after {
@@ -1163,4 +1163,4 @@ div[role="main"] {
 // -----------------------
 
 @import "@{templateLocal}/less/variables.less";
-//@import "@{templateLocal}/bk-v8-test.less";
+@import "@{templateLocal}/bk-v8-test.less";

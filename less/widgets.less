@@ -500,6 +500,7 @@ div[role="main"] {
         height: 500px;
 
         @media @tablet {
+            min-height: 350px;
             height: 350px;
         }
     }
@@ -609,6 +610,10 @@ div[role="main"] {
                 right: 0;
                 top: 225px;
                 vertical-align: top;
+
+                @media @tablet {
+                    top: 145px;
+                }
 
                 &:after {
                     border-style: solid;
