@@ -117,10 +117,18 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	.post-article {
 		.flex-display;
 		.flex-direction(column);
+		.align-items(center);
+		margin-bottom: 40px;
 		position: relative;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.post-image {
+		display: block;
+		width: 100%;
 
 		.image-link {
 			background-position: center center;
@@ -178,14 +186,6 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	        padding: 16px;
 	        text-transform: uppercase;
 	        .transition(all 0.5s ease-in-out);
-		}
-	}
-
-	.post-article {
-		margin-bottom: 40px;
-
-		&:last-child {
-			margin-bottom: 0;
 		}
 	}
 

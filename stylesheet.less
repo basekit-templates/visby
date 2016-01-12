@@ -204,10 +204,12 @@ button,
 
 .home-page,
 .home-page body.edit,
-.home-page .template-container {
-    height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+.body.edit .template-container {
+    @media @tablet-860px {
+        height: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 
@@ -718,7 +720,7 @@ div[data-widget-type="extendednavigation"] {
         padding-right: 40px;
         position: relative;
         text-align: center;
-        width: auto;
+        width: 100%;
         z-index: 2;
 
         @media @tablet-860px {
@@ -771,7 +773,7 @@ div[data-widget-type="extendednavigation"] {
         margin: 0;
         height: 100%;
         width: 100%;
-        z-index: 2;
+        z-index: 3;
 
         // Button styles
         button {
