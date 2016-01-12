@@ -613,6 +613,7 @@ form.ecomproductslist__form {
 		width: 0;
 		opacity: 0;
 		visibility: hidden;
+		-webkit-transition: visiblity 1s ease, width 0.5s ease;
 	}
 
 	// Make section title and filters section visible
@@ -650,6 +651,7 @@ form.ecomproductslist__form {
 		order: 1;
 		.flex(1 0 auto);
 		width: 100%;
+		-webkit-transition: width 0.5s ease, opacity 1s ease;
 	}
 
 	// Alter width to account for filters

@@ -202,16 +202,20 @@ button,
 // Header
 // ---------------
 
+
+// Fix for VH not working with the mobile editor in iOS
 .home-page,
+.blog-page,
 .home-page body.edit,
-.body.edit .template-container {
+.blog-page body.edit,
+.home-page body.edit .template-container,
+.blog-page body.edit .template-container {
     @media @tablet-860px {
         height: 100%;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
     }
 }
-
 
 // Default header styling
 .template-header,
@@ -355,7 +359,7 @@ button,
     }
 
     .ecombasket:before {
-        background-color: white;
+        background-color: fade(white, 25%);
     }
 
     .navigation-toggle:after,
@@ -558,7 +562,7 @@ div[data-widget-type="extendednavigation"] {
     .nav-open .navigation-toggle {
 
         // Toggle Button open state
-        background-color: transparent;
+        background-color: transparent!important;
         position: fixed;
         top: 12px;
         .transition(background-color 0s ease-out);
@@ -826,7 +830,9 @@ div[data-widget-type="extendednavigation"] {
             right: 35px;
 
             @media @mobile-650px {
-                right: 25px;
+                width: 18px;
+                height: 18px;
+                right: 20px;
             }
         }
 
@@ -847,7 +853,9 @@ div[data-widget-type="extendednavigation"] {
             left: 35px;
 
             @media @tablet-860px {
-                left: 25px;
+                width: 18px;
+                height: 18px;
+                left: 20px;
             }
         }
 
@@ -919,6 +927,10 @@ div[data-widget-type="extendednavigation"] {
         right: 0;
         text-align: center;
         z-index: 2;
+
+        @media @mobile-650px {
+            bottom; 20px;
+        }
 
         ul.pagination- list {
             text-align: center;
@@ -1180,4 +1192,4 @@ div[role="main"] {
 // -----------------------
 
 @import "@{templateLocal}/less/variables.less";
-//@import "@{templateLocal}/bk-v8-test.less";
+@import "@{templateLocal}/bk-v8-test.less";
