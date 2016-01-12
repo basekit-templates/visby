@@ -510,15 +510,17 @@ div[role="main"] {
 
         // Slide Caption
         .caption {
-            background-color: transparent;
-            bottom: -118px;
+            background-color: @color__body--background;
+            bottom: -40px;
             display: block;
             margin: 0 auto;
             width: 100%;
-            padding: 25px;
+            padding: 25px 25px 35px;
             left: 0;
             right: 0;
             text-align: center;
+            .transition(all 0.5s ease);
+            max-width: 75%;
             width: auto;
 
             .image-title {
@@ -535,6 +537,10 @@ div[role="main"] {
             }
             .image-description {
                 color: @color__p--text;
+
+                @media @tablet {
+                    line-height: bkscale(@font__p--font-size, 0.9);
+                }
             }
         }
 
@@ -665,7 +671,7 @@ div[role="main"] {
             display: block;
             margin: 0;
             position: absolute;
-            bottom: 20px;
+            bottom: -50px;
             width: 100%;
 
             // Restrict Width of Pagination
@@ -680,21 +686,21 @@ div[role="main"] {
 
             li.pagination-item {
                 margin-bottom: 0;
-                margin-left: 10px;
+                margin-left: 5px;
 
                 &:first-child {
                     margin-left: 0;
                 }
 
                 &.selected button {
-                     background-color: white;
+                     background-color: @color__secondary;
                 }
             }
 
             // Pagination button
             button {
                 background-color: transparent;
-                border: 2px solid white;
+                border: 2px solid @color__secondary;
                 .border-radius(100px);
                 padding: 0!important;
                 text-indent: -9999px;
@@ -705,12 +711,14 @@ div[role="main"] {
     }
 
     .responsiveslideshow {
-        .pause-toggle {
+        .pause-toggle,
+        .caption {
             opacity: 0;
             visibility: hidden;
         }
 
-        &:hover .pause-toggle {
+        &:hover .pause-toggle,
+        &:hover .caption {
             opacity: 1;
             visibility: visible;
         }
