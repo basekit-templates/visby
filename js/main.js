@@ -1,4 +1,3 @@
-
  // Toggles class open to display/hide folders
 $( ".navigation-item.folder .item-name--parent" ).each(function() {
 	$( this ).click(function() {
@@ -6,13 +5,14 @@ $( ".navigation-item.folder .item-name--parent" ).each(function() {
 	});
 });
 
+
  // Toggles class open to display/hide filters
 $(document).on("click", ".filters-toggle", function() {
     $( ".ecomproductslist" ).toggleClass( "filters-open" );
 });
 
-var publishedmode = true;
 
+var publishedmode = true;
 
 if($("body.edit-mode").length > 0) {
     publishedmode = false;
@@ -24,15 +24,12 @@ if(publishedmode==true) {
         $( "body" ).toggleClass( "basket-open" );
     });
 
-
     $(document).click(function(event) {
         if( $(event.target).is(".basket-body") ) {
             $( "body" ).removeClass( "basket-open" );
             $( "#page-zones__template-widgets__ecombasket-shopbasket" ).removeClass( "show-content" );
         }
     });
-
-
 
     $('.basket-body').click(function(e) {
         if (e.target == this) {
@@ -41,6 +38,7 @@ if(publishedmode==true) {
         }
     });
 }
+
 
 // Toggles class open to display/hide the whole navigation
 $( ".navigation-toggle" ).click(function() {
@@ -56,7 +54,6 @@ function closeEverything() {
 
 
 // On ESC key
-
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27) {
