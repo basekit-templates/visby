@@ -351,7 +351,6 @@ hr.rule {
             .image-link {
                 background-blend-mode: multiply;
                 opacity: 0.85;
-                -webkit-filter: grayscale(65%);
                 text-decoration: none;
             }
 
@@ -693,14 +692,14 @@ div[role="main"] {
                 }
 
                 &.selected button {
-                     background-color: @color__secondary;
+                     background-color: @color__slideshow-pagination-item--background;
                 }
             }
 
             // Pagination button
             button {
                 background-color: transparent;
-                border: 2px solid @color__secondary;
+                border: 2px solid @color__slideshow-pagination-item--background;
                 .border-radius(100px);
                 padding: 0!important;
                 text-indent: -9999px;

@@ -247,7 +247,8 @@
         },
         "slideshow": {
             "color__slideshow-title--text": "white",
-            "color__slideshow-description--text": "white"
+            "color__slideshow-description--text": "white",
+            "color__slideshow-pagination-item--background": "373737"
         },
         "twitter": {
             "color__twitter-item--background": "@color-swatch1"

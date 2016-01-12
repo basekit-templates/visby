@@ -645,6 +645,10 @@ div[data-widget-type="extendednavigation"] {
 // Slideshow
 // ---------------
 
+.slideshow-home {
+    position: relative;
+}
+
 .slideshow-home .responsiveslideshow {
 
     .slides-list {
@@ -798,6 +802,11 @@ div[data-widget-type="extendednavigation"] {
             top: 48%;
             height: 60px;
             width: 45px;
+
+            &:before,
+            &:after {
+                display: none!important;
+            }
         }
 
         // Next button
