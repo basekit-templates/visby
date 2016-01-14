@@ -263,7 +263,7 @@
             "color__ecomproduct-price--text": "@color-swatch2"
         },
         "blog": {
-            "@color__blogsearch--background": "darken(@color__body--background, 2.5%)"
+            "color__blogsearch--background": "darken(@color__body--background, 2.5%)"
         }
     }
 }
