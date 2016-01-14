@@ -1,14 +1,14 @@
 {
     "name": "Visby",
     "thumbnail": "visby.png",
-    "screenshot" : "visby-screenshot.png",
+    "screenshot" : "visby-screenshot.jpg",
     "widgetVersion": 2,
     "templateType":"standard",
     "pageTypes": ["home", "blogpost", "blogpostlist", "ecomproduct", "ecomproductslist"],
     "images":[
         "images/logo.png",
-        "images/slide-1.jpg",
-        "images/slide-6.jpg"
+        "images/slideshow-1.jpg",
+        "images/slideshow-2.jpg"
     ],
     "colorSwatches":
     {
@@ -204,7 +204,7 @@
             "font__button--letter-spacing" : "@font-swatch7-letter-spacing"
         },
         "header": {
-            "color__header--background": "@color-swatch1"
+            "color__header--background": "#ffffff"
         },
         "footer": {
             "color__footer--background": "#2F2F2F"
@@ -248,7 +248,7 @@
         "slideshow": {
             "color__slideshow-title--text": "white",
             "color__slideshow-description--text": "white",
-            "color__slideshow-pagination-item--background": "373737"
+            "color__slideshow-pagination-item--background": "#373737"
         },
         "twitter": {
             "color__twitter-item--background": "@color-swatch1"
@@ -261,6 +261,9 @@
         "ecommerce": {
             "color__ecomproduct-title--text": "@font-swatch4-color",
             "color__ecomproduct-price--text": "@color-swatch2"
+        },
+        "blog": {
+            "@color__blogsearch--background": "darken(@color__body--background, 2.5%)"
         }
     }
 }

@@ -61,7 +61,7 @@ ul.tweet-list {
     &:first-child .tweet-content{
 
         &:after {
-            color: @color__secondary;
+            color: darken(@color__button--background, 20%);
             content: "\f099";
             font-family: 'FontAwesome', sans-serif;
             position: absolute;
@@ -91,7 +91,7 @@ ul.tweet-list {
 	&:last-child:after {
 		border-style: solid;
 		border-width: 0 30px 30px 0;
-		border-color: transparent rgb(250,250,250) transparent transparent;
+		border-color: transparent @color__body--background transparent transparent;
 		content: "";
 		margin-top: 25px;
 		position: absolute;
@@ -103,7 +103,7 @@ ul.tweet-list {
 	&:last-child:before {
 		  border-style: solid;
 		  border-width: 0 31px 30px 0;
-		  border-color: transparent rgb(225,225,225) transparent transparent;
+		  border-color: transparent darken(@color__twitter-item--background, 2%) transparent transparent;
 		  content: "";
 		  margin-top: 25px;
 		  position: absolute;
@@ -725,8 +725,9 @@ div[role="main"] {
 }
 
 
+
 // -----------------------------
-//  1. Company Description
+//  Company Description
 // -----------------------------
 
 .companydescription h3 {
@@ -735,8 +736,10 @@ div[role="main"] {
     line-height: @font__h4--line-height;
 }
 
+
+
 // -----------------------------
-//  1. Yelp Widget
+//  Yelp Widget
 // -----------------------------
 
 .review-list {
@@ -765,5 +768,17 @@ div[role="main"] {
 
     li {
         list-style: none;
+    }
+}
+
+
+
+// -----------------------------
+//  Click To Call
+// -----------------------------
+
+.clicktocall__phone-number-link {
+    @media @mobile-650px {
+        color: @color__button--text;
     }
 }
