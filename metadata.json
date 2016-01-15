@@ -63,7 +63,7 @@
         "font1": {
             "font-family": "\"Playfair Display\", \"Futura\", Helvetica Neue, sans-serif",
             "font-size": "40px",
-            "font-weight": "700",
+            "font-weight": "400",
             "line-height": "52px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
@@ -72,7 +72,7 @@
             "font-family": "\"Playfair Display\", \"Futura\", Helvetica Neue, sans-serif",
             "font-size": "32px",
             "font-weight": "400",
-            "line-height": "38px",
+            "line-height": "40px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
@@ -80,7 +80,7 @@
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "28px",
             "font-weight": "400",
-            "line-height": "32px",
+            "line-height": "38px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },

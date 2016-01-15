@@ -107,9 +107,10 @@ ul,
 ol,
 li,
 .p-font,
-time.blog-post-publish-date {
-	font-size: bkscale(@font__p--font-size, 1);
-	line-height: bkscale(@font__p--line-height, 1);
+time.blog-post-publish-date,
+.product-body {
+	font-size: @font__p--font-size;
+	line-height: @font__p--line-height;
 	@media @mobile-650px {
 		font-size: bkscale(@font__p--font-size, 0.95);
 		line-height: bkscale(@font__p--line-height, 0.95);

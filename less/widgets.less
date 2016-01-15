@@ -283,13 +283,19 @@ hr.rule {
 	.image-title {
 		color: @color__image-title--text;
 		font-family: @font__h2--font-family;
-		font-size: @font__h4--font-size;
+		font-size: bkscale(@font__h2--font-size, 0.8);
+        font-weight: @font__h2--font-weight;
+        letter-spacing: @font__h2--letter-spacing;
+        line-height: bkscale(@font__h2--line-height, 0.8);
 		margin-bottom: 8px;
 	}
 	.image-description {
         color: @color__image-description--text;
-		font-family: @font__body;
+		font-family: @font__body--font-family;
 		font-size: @font__p--font-size;
+        font-weight: @font__p--font-weight;
+        letter-spacing: @font__p--letter-spacing;
+        line-height: @font__p--line-height;
 	}
 }
 
@@ -525,21 +531,29 @@ div[role="main"] {
 
             .image-title {
                 color: @color__h2--text;
-                font-size: bkscale(@font__h4--font-size, 0.9);
+                font-family: @font__h2--font-family;
+                font-size: bkscale(@font__h3--font-size, 0.9);
                 font-weight: @font__h3--font-weight;
-                line-height: bkscale(@font__h4--line-height, 0.9);
+                letter-spacing: @font__h3--letter-spacing;
+                line-height: bkscale(@font__h3--line-height, 0.9);
                 margin-bottom: 4px;
 
                 @media @tablet {
-                    font-size: bkscale(@font__h4--font-size, 0.9);
-                    line-height: bkscale(@font__h4--font-size, 0.9);
+                    font-size: bkscale(@font__h3--font-size, 0.9);
+                    line-height: bkscale(@font__h3--line-height, 0.9);
                 }
             }
             .image-description {
                 color: @color__p--text;
+                font-family: @font__p--font-family;
+                font-size: @font__p--font-size;
+                font-weight: @font__weight--font-weight;
+                letter-spacing: @font__p--letter-spacing;
+                line-height: @font__p--line-height;
 
                 @media @tablet {
-                    line-height: bkscale(@font__p--font-size, 0.9);
+                    font-size: bkscale(@font__p--line-height, 0.9);
+                    line-height: bkscale(@font__p--line-height, 0.9);
                 }
             }
         }
