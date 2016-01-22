@@ -292,6 +292,14 @@ button,
     }
 }
 
+
+// Logo
+@media @mobile-650px {
+    .logo-image {
+        max-width: 125px;
+    }
+}
+
 // Header styling if slideshow is present
 .slideshow-home [data-widget-type="responsiveslideshow"] + .template-header,
 .blogpost-page [data-widget-type="blogpost"] + .template-header {
@@ -668,16 +676,16 @@ div[data-widget-type="extendednavigation"] {
     position: relative;
 }
 
-.slideshow-home .responsiveslideshow {
+.responsiveslideshow .widget-overlay {
+    top: 60px;
 
-    .widget-overlay .widget__list {
-        top: 60px!important;
-
-        .widget__item {
-            display: block!important;
-            margin-top: 5px!important;
-        }
+    .widget__list {
+        display: block;
+        margin-top: 5px;
     }
+}
+
+.slideshow-home .responsiveslideshow {
 
     .slides-list {
         position: relative;
@@ -808,6 +816,11 @@ div[data-widget-type="extendednavigation"] {
         height: 100%;
         width: 100%;
         z-index: 3;
+
+        @media @mobile-650px {
+            display: none;
+            visibility: hidden;
+        }
 
         // Button styles
         button {
