@@ -362,6 +362,16 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			line-height: @font__h3--line-height;
 			text-align: center;
 			
+			@media @tablet-860px {
+				font-size: bkscale(@font__h3--font-size, 0.85);
+				line-height: bkscale(@font__h3--font-size, 0.85);
+			}
+			
+			@media @mobile-650px {
+				font-size: bkscale(@font__h3--font-size, 0.7);
+				line-height: bkscale(@font__h3--font-size, 0.7);
+			}
+			
 			&:before,
 			&:after {
 				display: none;
