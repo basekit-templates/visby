@@ -529,6 +529,11 @@ div[role="main"] {
             max-width: 75%;
             width: 100%;
 
+            @media @tablet {
+                padding: 15px 15px 10px;
+                max-width: 85%;
+            }
+
             .image-title {
                 color: @color__h2--text;
                 font-family: @font__h2--font-family;
@@ -539,8 +544,9 @@ div[role="main"] {
                 margin-bottom: 4px;
 
                 @media @tablet {
-                    font-size: bkscale(@font__h3--font-size, 0.9);
-                    line-height: bkscale(@font__h3--line-height, 0.9);
+                    font-size: 19px;
+                    line-height: 24px;
+                    margin-bottom: 8px;
                 }
             }
             .image-description {
@@ -552,8 +558,8 @@ div[role="main"] {
                 line-height: @font__p--line-height;
 
                 @media @tablet {
-                    font-size: bkscale(@font__p--line-height, 0.9);
-                    line-height: bkscale(@font__p--line-height, 0.9);
+                    font-size: 15px;
+                    line-height: 22px;
                 }
             }
         }
@@ -577,7 +583,9 @@ div[role="main"] {
                 .transition(all 0.5s ease);
 
                 @media @tablet {
-                    top: 125px;
+                    top: 145px;
+                    height: 80px;
+                    width:; 35px;
                 }
 
                 .icon:before {
@@ -632,7 +640,7 @@ div[role="main"] {
                 vertical-align: top;
 
                 @media @tablet {
-                    top: 145px;
+                    top: 155px;
                 }
 
                 &:after {

@@ -268,15 +268,11 @@ button,
 
     // Logo
     [data-widget-type="logo"] {
-        margin-right: 10px;
+        margin-right: 12px;
         max-width: 100%;
 
         .logo-link {
             display: block;
-        }
-
-        img {
-            max-height: 300px;
         }
     }
 
@@ -285,6 +281,10 @@ button,
         @media @tablet-860px  {
             padding-right: 60px;
         }
+    }
+
+    .companyname {
+        line-height: @font__companyname--line-height;
     }
 
     .company-link {
@@ -372,7 +372,7 @@ button,
 
     .navigation-toggle {
 
-    // Displays as icon's middle bar
+        // Displays as icon's middle bar
         background-color: white;
     }
 }
@@ -480,10 +480,7 @@ div[data-widget-type="extendednavigation"] {
         top: 0;
 
         .widget-overlay {
-            left: initial;
-            height: 50px;
-            top: -10px;
-            width: 70px;
+            display: none!important;
         }
     }
 
@@ -502,6 +499,15 @@ div[data-widget-type="extendednavigation"] {
         width: 75%;
         .transition(right 400ms ease);
         z-index: 9999;
+    }
+
+    .nav-open div[data-widget-type="extendednavigation"] .widget-overlay {
+        display: block!important;
+        left: initial;
+        height: 60vh;
+        top: 40px;
+        width: 75%;
+        z-index: 100004;
     }
 
     .nav-open .navigation-body {
@@ -663,6 +669,15 @@ div[data-widget-type="extendednavigation"] {
 }
 
 .slideshow-home .responsiveslideshow {
+
+    .widhey-overlay .widget__list {
+        top: 60px;
+
+        .widget__item {
+            display: block;
+            margin-top: 5px;
+        }
+    }
 
     .slides-list {
         position: relative;
@@ -937,7 +952,7 @@ div[data-widget-type="extendednavigation"] {
         left: 0;
         right: 0;
         text-align: center;
-        z-index: 2;
+        z-index: 3;
 
         @media @mobile-650px {
             bottom; 20px;
