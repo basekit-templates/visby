@@ -343,7 +343,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 
 		// Make paragraph text larger for blog post content
-		p, blockquote {
+		p {
 			font-size: bkscale(@font__p--font-size, 1.05);
 			line-height: bkscale(@font__p--line-height, 1.05);
 
@@ -352,7 +352,20 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 				line-height: bkscale(@font__p--line-height, 1);
 			}
 		}
-
+		
+		// Custom blockquote styling for blog post
+		blockquote {
+			color: darken(@color__p--text, 20%);
+			font-family: @font__h1--font-family;
+			font-size: @font__h3--font-size;
+			line-height: @font__h3--line-height;
+			text-align: center;
+			
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
 
 		// Add additional padding to blog post images
 		img {
@@ -379,7 +392,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 
 	// Font styling for blog metadata
 	.timestamp, .category-title, .category-link, .tags-title, .tag-link {
-		color: @color__form-label--text;
+	    color: @color__form-label--text;
 	    font-family: @font-swatch4-font-family;
 	    font-size: 12px;
 	    font-weight: 700;
