@@ -55,6 +55,11 @@
 <script src="{{asset('js/main.js')}}"></script>
 
 {% block scripts %}
+	<script>
+	 if(!$("div").hasClass("post-image")){
+	    $("div.blog-post").addClass("has-image");
+	 }
+	 </script>
 {% endblock %}
 
 </body>

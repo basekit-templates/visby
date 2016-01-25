@@ -226,7 +226,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 //  3. Blog Post
 // -----------------------------
 
-.blogpost {
+.blogpost--has-image{
 	.post-article {
 		position: relative;
 	}
@@ -312,6 +312,243 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 
 	.post-title {
 		color: white;
+		font-family: @font__h1--font-family;
+		font-size: @font__h1--font-size;
+		font-weight: @font__h1--font-weight;
+		letter-spacing: @font__h1--letter-spacing;
+		line-height: @font__h1--line-height;
+	    margin-bottom: 0;
+		padding-bottom: 0;
+		-webkit-font-smoothing: antialiased;
+
+		@media @tablet-860px {
+			font-size: bkscale(@font__h1--font-size, 0.70);
+			line-height: bkscale(@font__h1--line-height, 0.75);
+			margin-top: -5px;
+		}
+	}
+
+	.post-content {
+		margin: 0 auto;
+		max-width: 860px;
+		padding: 10rem 30px 2rem;
+
+		@media @tablet-860px {
+			.flex( 0 100%);
+			padding-bottom: 0;
+		}
+
+		@media @mobile-650px {
+			padding: 6.5rem 25px 0;
+		}
+
+		// Make paragraph text larger for blog post content
+		p {
+			font-size: bkscale(@font__p--font-size, 1.05);
+			line-height: bkscale(@font__p--line-height, 1.05);
+
+			@media @tablet {
+				font-size: bkscale(@font__p--font-size, 1);
+				line-height: bkscale(@font__p--line-height, 1);
+			}
+		}
+
+		// Custom blockquote styling for blog post
+		blockquote {
+			color: darken(@color__p--text, 20%);
+			font-family: @font__p--font-family;
+			font-size: @font__h3--font-size;
+			font-style: normal;
+			line-height: @font__h3--line-height;
+			text-align: center;
+
+			@media @tablet-860px {
+				font-size: bkscale(@font__h3--font-size, 0.85);
+				line-height: bkscale(@font__h3--line-height, 0.85);
+			}
+
+			@media @mobile-650px {
+				font-size: bkscale(@font__h3--font-size, 0.7);
+				line-height: bkscale(@font__h3--line-height, 0.7);
+			}
+
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+
+		// Add additional padding to blog post images
+		img {
+			 padding: 1em 0 0.5em;
+		}
+	}
+
+	// Footer
+	.post-footer {
+		margin: 0 auto;
+		max-width: 860px;
+		padding: 0 30px;
+		width: 100%;
+	}
+
+	.post-attributes {
+		.flex-display(inline-flex);
+		margin-top: 0;
+	}
+
+	.post-tags {
+		margin-left: 20px;
+	}
+
+	// Font styling for blog metadata
+	.timestamp, .category-title, .category-link, .tags-title, .tag-link {
+	    color: @color__form-label--text;
+	    font-family: @font-swatch4-font-family;
+	    font-size: 12px;
+	    font-weight: 700;
+	    letter-spacing: 1px;
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	// Tags and date text colour
+	.timestamp, .category-link, .tag-link {
+		display: inline-block;
+	}
+
+	.timestamp {
+		margin-right: 20px;
+	}
+
+	// Add comma after any kind of tag
+	.category-link, .tag-link {
+		&:after {
+			content: ",";
+			position: relative;
+		}
+	}
+
+	// Remove comma after last tag
+	.tag-item:last-child .tag-link:after, .category-link:after {
+		display: none;
+	}
+
+	// Social sharing icons
+	.sharing-links {
+		padding: 0;
+	 	position: relative;
+
+		li.network-item {
+			margin: 10px 16px 10px 0;
+		}
+
+		button {
+			background-color: transparent;
+			color: fade(@color-swatch2, 75%);
+			font-size: 16px;
+			min-width: initial;
+			padding: 0;
+			overflow: hidden;
+			height: 25px;
+			width: 15px;
+			&:hover {
+				background-color: transparent;
+				color: fade(@color-swatch2, 90%);
+			}
+		}
+	}
+}
+
+
+// If no image is avalable
+
+.blogpost {
+	.post-article {
+		position: relative;
+	}
+
+	.post-image {
+
+		.image-link {
+			background-color: transparent;
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+			height: 650px;
+			height: 65vh;
+			.transition(none);
+			-webkit-filter: grayscale(20%);
+
+			@media (max-height: 800px) {
+				height: 650px;
+				height: 80vh;
+			}
+
+			@media @tablet-860px {
+				height: 450px;
+				height: 100vh;
+			}
+
+			&:before {
+				background-color: fade(black, 45%);
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				height: 650px;
+				height: 65vh;
+
+				@media (max-height: 800px) {
+					height: 650px;
+					height: 80vh;
+				}
+
+				@media @tablet-860px {
+					height: 450px;
+					height: 100vh;
+				}
+			}
+		}
+
+		.image {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
+	.post-header {
+		position: relative;
+		top: 0;
+		margin: 0 auto;
+		max-width: 860px;
+		width: 100%;
+		height: 650px;
+		height: 65vh;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		.flex-display;
+		.align-items(center);
+		.justify-content(center);
+
+		@media (max-height: 800px) {
+			height: 650px;
+			height: 80vh;
+		}
+
+		@media @tablet-860px {
+			height: 450px;
+			height: 100vh;
+			padding: 0 15px;
+		}
+	}
+
+	.post-title {
+		color: black;
 		font-family: @font__h1--font-family;
 		font-size: @font__h1--font-size;
 		font-weight: @font__h1--font-weight;
