@@ -322,7 +322,7 @@ button,
     }
 
     .company-link {
-        color: white;
+        color: @color__slideshow-title--text;
     }
 
     // Color of navigation links when overlaying a feature image
@@ -335,7 +335,7 @@ button,
             }
         }
         .item-name {
-            color: fade(white, 65%);
+            color: fade(@color__slideshow-title--text, 65%);
             font-size: bkscale(@font__navigation--font-size, 0.95);
             line-height: bkscale(@font__navigation--font-size, 0.95);
 
@@ -344,7 +344,7 @@ button,
              }
 
             &:hover {
-                color: white;
+                color: @color__slideshow-title--text;
 
                 @media @tablet-860px {
                     color: @color__navigation--text--hover;
@@ -370,7 +370,7 @@ button,
     }
 
     .ecombasket:before {
-        background-color: fade(white, 25%);
+        background-color: fade(@color__slideshow-title--text, 25%);
     }
 
     .navigation-toggle:after,
@@ -982,8 +982,8 @@ div[data-widget-type="extendednavigation"] {
             margin-right: 2px;
 
             &.selected button {
-                background-color: white;
-                border: 2px solid white;
+                background-color: @color__slideshow-pagination-item--background;
+                border: 2px solid @color__slideshow-pagination-item--background;
                 position: relative;
             }
         }
@@ -991,7 +991,7 @@ div[data-widget-type="extendednavigation"] {
         // Pagination button
         button {
             background-color: transparent;
-            border: 2px solid fade(white, 70%);
+            border: 2px solid fade(@color__slideshow-pagination-item--background, 70%);
             .border-radius(100px);
             padding: 0;
             text-indent: -9999px;
