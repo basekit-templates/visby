@@ -15,7 +15,6 @@
 
 div[data-widget-type="blogsearch"] {
 	background-color: @color__blogsearch--background;
-    //background-color: lighten(@color-swatch7, 5%);
     border-bottom: 1px solid darken(@color__blogsearch--background, 5%);
     margin-bottom: 10px;
     padding: 30px 30px 25px;
@@ -29,28 +28,6 @@ div[data-widget-type="blogsearch"] {
         .fieldset {
         	position: relative;
         }
-
-        /*
-        .legend {
-        	background-color: white;
-            display: block;
-            font-family: @font__body;
-            font-size: 13px;
-            margin-bottom: 0;
-            padding: 5px 10px 5px 15px;
-            position: absolute;
-            left: 4px;
-            top: 7px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            visibility: visible;
-
-            @media @mobile-650px {
-            	display: none;
-            	visibility: hidden;
-            	padding: 5px 15px 5px 15px;
-            }
-        }*/
 
         // Hide label
         .label,
@@ -69,6 +46,7 @@ div[data-widget-type="blogsearch"] {
             }
         }
 
+		// Input and button height
         input, button {
             height: 55px;
         }
@@ -112,9 +90,13 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	margin-top: 0;
 }
 
+
+// Post list page
 .blogpostlist {
 	margin-top: 20px;
 
+
+	// Post container
 	.post-article {
 		.flex-display;
 		.flex-direction(column);
@@ -122,11 +104,14 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		margin-bottom: 40px;
 		position: relative;
 
+		// Remove margin from last list item
 		&:last-child {
 			margin-bottom: 0;
 		}
 	}
 
+
+	// Uses background image and makes it span full width
 	.post-image {
 		display: block;
 		width: 100%;
@@ -144,18 +129,20 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			}
 		}
 
+		// Hides inline image
 		.image {
 			display: none;
 			visibility: hidden;
 		}
 	}
 
+
+	// Post content
 	.post-content {
 		margin: 0 auto;
 		padding: 0 0 20px 0;
 		max-width: 750px;
 		text-align: center;
-
 		order: 3;
 
 		@media @tablet-860px {
@@ -163,6 +150,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			padding: 12px 0 0;
 		}
 
+		// Blog post list title
 		.post-title {
 			 padding-bottom: 15px;
 
@@ -171,12 +159,14 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			 }
 		}
 
-		h2 a {
+		// Blog post list title colour
+		.title-link {
 			color: @color__h2--text;
 		}
 
+		// Read more link
 		.read-more {
-		color: @color__button--text;
+			color: @color__button--text;
 	        display: inline-block;
 	        font-family: @font__button--font-family;
 	        font-size: bkscale(@font__button--font-size, 0.93);
@@ -190,12 +180,15 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
+
+	// Blog post list footer
 	.post-footer {
 		padding: 2em 0 0.45em;
 		order: 2;
 		text-align: center;
 		width: 100%;
 
+		// Timestamp
 		.timestamp {
 			color: @color__form-label--text;
 			font-family: @font-swatch4-font-family;
@@ -207,6 +200,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
+
 	// Previous and next buttons
 	.post-list-footer {
 		margin-top: 40px;
@@ -215,33 +209,56 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 
 
 // Pagination
-
 .blogpostlist__pagination-list {
 	.flex-display;
 	.justify-content(space-between);
 }
 
 
+
 // -----------------------------
 //  3. Blog Post
 // -----------------------------
 
-.blogpost--has-image{
-	.post-article {
+// Article container
+.post-article {
+	position: relative;
+}
+
+// If the blog post has an image apply these styles
+.post-article--has-image {
+
+	// Use the background image
+	.image-link {
+		background-color: transparent;
+		background-size: cover;
+		background-position: center center;
 		position: relative;
-	}
+		height: 650px;
+		height: 65vh;
+		.transition(none);
+		-webkit-filter: grayscale(20%);
 
-	.post-image {
+		@media (max-height: 800px) {
+			height: 650px;
+			height: 80vh;
+		}
 
-		.image-link {
-			background-color: transparent;
-			background-size: cover;
-			background-position: center center;
-			position: relative;
+		@media @tablet-860px {
+			height: 450px;
+			height: 100vh;
+		}
+
+		&:before {
+			background-color: fade(black, 45%);
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
 			height: 650px;
 			height: 65vh;
-			.transition(none);
-			-webkit-filter: grayscale(20%);
 
 			@media (max-height: 800px) {
 				height: 650px;
@@ -252,36 +269,18 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 				height: 450px;
 				height: 100vh;
 			}
-
-			&:before {
-				background-color: fade(black, 45%);
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				height: 650px;
-				height: 65vh;
-
-				@media (max-height: 800px) {
-					height: 650px;
-					height: 80vh;
-				}
-
-				@media @tablet-860px {
-					height: 450px;
-					height: 100vh;
-				}
-			}
-		}
-
-		.image {
-			display: none;
-			visibility: hidden;
 		}
 	}
 
+
+	// Hide the inline image
+	.image {
+		display: none;
+		visibility: hidden;
+	}
+
+
+	// Position the blog post title over the image
 	.post-header {
 		position: absolute;
 		top: 0;
@@ -310,6 +309,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
+	// Post title text styling if image is available
 	.post-title {
 		color: white;
 		font-family: @font__h1--font-family;
@@ -328,374 +328,153 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
+	// Content area
 	.post-content {
-		margin: 0 auto;
-		max-width: 860px;
 		padding: 10rem 30px 2rem;
 
 		@media @tablet-860px {
-			.flex( 0 100%);
+		.flex( 0 100%);
 			padding-bottom: 0;
 		}
 
 		@media @mobile-650px {
 			padding: 6.5rem 25px 0;
 		}
-
-		// Make paragraph text larger for blog post content
-		p {
-			font-size: bkscale(@font__p--font-size, 1.05);
-			line-height: bkscale(@font__p--line-height, 1.05);
-
-			@media @tablet {
-				font-size: bkscale(@font__p--font-size, 1);
-				line-height: bkscale(@font__p--line-height, 1);
-			}
-		}
-
-		// Custom blockquote styling for blog post
-		blockquote {
-			color: darken(@color__p--text, 20%);
-			font-family: @font__p--font-family;
-			font-size: @font__h3--font-size;
-			font-style: normal;
-			line-height: @font__h3--line-height;
-			text-align: center;
-
-			@media @tablet-860px {
-				font-size: bkscale(@font__h3--font-size, 0.85);
-				line-height: bkscale(@font__h3--line-height, 0.85);
-			}
-
-			@media @mobile-650px {
-				font-size: bkscale(@font__h3--font-size, 0.7);
-				line-height: bkscale(@font__h3--line-height, 0.7);
-			}
-
-			&:before,
-			&:after {
-				display: none;
-			}
-		}
-
-		// Add additional padding to blog post images
-		img {
-			 padding: 1em 0 0.5em;
-		}
-	}
-
-	// Footer
-	.post-footer {
-		margin: 0 auto;
-		max-width: 860px;
-		padding: 0 30px;
-		width: 100%;
-	}
-
-	.post-attributes {
-		.flex-display(inline-flex);
-		margin-top: 0;
-	}
-
-	.post-tags {
-		margin-left: 20px;
-	}
-
-	// Font styling for blog metadata
-	.timestamp, .category-title, .category-link, .tags-title, .tag-link {
-	    color: @color__form-label--text;
-	    font-family: @font-swatch4-font-family;
-	    font-size: 12px;
-	    font-weight: 700;
-	    letter-spacing: 1px;
-		margin: 0;
-		text-transform: uppercase;
-	}
-
-	// Tags and date text colour
-	.timestamp, .category-link, .tag-link {
-		display: inline-block;
-	}
-
-	.timestamp {
-		margin-right: 20px;
-	}
-
-	// Add comma after any kind of tag
-	.category-link, .tag-link {
-		&:after {
-			content: ",";
-			position: relative;
-		}
-	}
-
-	// Remove comma after last tag
-	.tag-item:last-child .tag-link:after, .category-link:after {
-		display: none;
-	}
-
-	// Social sharing icons
-	.sharing-links {
-		padding: 0;
-	 	position: relative;
-
-		li.network-item {
-			margin: 10px 16px 10px 0;
-		}
-
-		button {
-			background-color: transparent;
-			color: fade(@color-swatch2, 75%);
-			font-size: 16px;
-			min-width: initial;
-			padding: 0;
-			overflow: hidden;
-			height: 25px;
-			width: 15px;
-			&:hover {
-				background-color: transparent;
-				color: fade(@color-swatch2, 90%);
-			}
-		}
 	}
 }
 
 
-// If no image is avalable
+.post-content {
+	margin: 0 auto;
+	max-width: 860px;
+	padding: 3rem 30px 2rem;
 
-.blogpost {
-	.post-article {
-		position: relative;
-	}
-
-	.post-image {
-
-		.image-link {
-			background-color: transparent;
-			background-size: cover;
-			background-position: center center;
-			position: relative;
-			height: 650px;
-			height: 65vh;
-			.transition(none);
-			-webkit-filter: grayscale(20%);
-
-			@media (max-height: 800px) {
-				height: 650px;
-				height: 80vh;
-			}
-
-			@media @tablet-860px {
-				height: 450px;
-				height: 100vh;
-			}
-
-			&:before {
-				background-color: fade(black, 45%);
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				height: 650px;
-				height: 65vh;
-
-				@media (max-height: 800px) {
-					height: 650px;
-					height: 80vh;
-				}
-
-				@media @tablet-860px {
-					height: 450px;
-					height: 100vh;
-				}
-			}
-		}
-
-		.image {
-			display: none;
-			visibility: hidden;
-		}
-	}
-
-	.post-header {
-		position: relative;
-		top: 0;
-		margin: 0 auto;
-		max-width: 860px;
-		width: 100%;
-		height: 650px;
-		height: 65vh;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		text-align: center;
-		.flex-display;
-		.align-items(center);
-		.justify-content(center);
-
-		@media (max-height: 800px) {
-			height: 650px;
-			height: 80vh;
-		}
-
-		@media @tablet-860px {
-			height: 450px;
-			height: 100vh;
-			padding: 0 15px;
-		}
-	}
-
-	.post-title {
-		color: black;
-		font-family: @font__h1--font-family;
-		font-size: @font__h1--font-size;
-		font-weight: @font__h1--font-weight;
-		letter-spacing: @font__h1--letter-spacing;
-		line-height: @font__h1--line-height;
-	    margin-bottom: 0;
+	@media @tablet-860px {
+		.flex( 0 100%);
 		padding-bottom: 0;
-		-webkit-font-smoothing: antialiased;
+	}
 
-		@media @tablet-860px {
-			font-size: bkscale(@font__h1--font-size, 0.70);
-			line-height: bkscale(@font__h1--line-height, 0.75);
-			margin-top: -5px;
+	@media @mobile-650px {
+		padding: 1.5rem 25px 0;
+	}
+
+	// Make paragraph text larger for blog post content
+	p {
+		font-size: bkscale(@font__p--font-size, 1.05);
+		line-height: bkscale(@font__p--line-height, 1.05);
+
+		@media @tablet {
+			font-size: bkscale(@font__p--font-size, 1);
+			line-height: bkscale(@font__p--line-height, 1);
 		}
 	}
 
-	.post-content {
-		margin: 0 auto;
-		max-width: 860px;
-		padding: 10rem 30px 2rem;
+	// Custom blockquote styling for blog post
+	blockquote {
+		color: darken(@color__p--text, 20%);
+		font-family: @font__p--font-family;
+		font-size: @font__h3--font-size;
+		font-style: normal;
+		line-height: @font__h3--line-height;
+		text-align: center;
 
 		@media @tablet-860px {
-			.flex( 0 100%);
-			padding-bottom: 0;
+			font-size: bkscale(@font__h3--font-size, 0.85);
+			line-height: bkscale(@font__h3--line-height, 0.85);
 		}
 
 		@media @mobile-650px {
-			padding: 6.5rem 25px 0;
+			font-size: bkscale(@font__h3--font-size, 0.7);
+			line-height: bkscale(@font__h3--line-height, 0.7);
 		}
 
-		// Make paragraph text larger for blog post content
-		p {
-			font-size: bkscale(@font__p--font-size, 1.05);
-			line-height: bkscale(@font__p--line-height, 1.05);
-
-			@media @tablet {
-				font-size: bkscale(@font__p--font-size, 1);
-				line-height: bkscale(@font__p--line-height, 1);
-			}
-		}
-
-		// Custom blockquote styling for blog post
-		blockquote {
-			color: darken(@color__p--text, 20%);
-			font-family: @font__p--font-family;
-			font-size: @font__h3--font-size;
-			font-style: normal;
-			line-height: @font__h3--line-height;
-			text-align: center;
-
-			@media @tablet-860px {
-				font-size: bkscale(@font__h3--font-size, 0.85);
-				line-height: bkscale(@font__h3--line-height, 0.85);
-			}
-
-			@media @mobile-650px {
-				font-size: bkscale(@font__h3--font-size, 0.7);
-				line-height: bkscale(@font__h3--line-height, 0.7);
-			}
-
-			&:before,
-			&:after {
-				display: none;
-			}
-		}
-
-		// Add additional padding to blog post images
-		img {
-			 padding: 1em 0 0.5em;
-		}
-	}
-
-	// Footer
-	.post-footer {
-		margin: 0 auto;
-		max-width: 860px;
-		padding: 0 30px;
-		width: 100%;
-	}
-
-	.post-attributes {
-		.flex-display(inline-flex);
-		margin-top: 0;
-	}
-
-	.post-tags {
-		margin-left: 20px;
-	}
-
-	// Font styling for blog metadata
-	.timestamp, .category-title, .category-link, .tags-title, .tag-link {
-	    color: @color__form-label--text;
-	    font-family: @font-swatch4-font-family;
-	    font-size: 12px;
-	    font-weight: 700;
-	    letter-spacing: 1px;
-		margin: 0;
-		text-transform: uppercase;
-	}
-
-	// Tags and date text colour
-	.timestamp, .category-link, .tag-link {
-		display: inline-block;
-	}
-
-	.timestamp {
-		margin-right: 20px;
-	}
-
-	// Add comma after any kind of tag
-	.category-link, .tag-link {
+		&:before,
 		&:after {
-			content: ",";
-			position: relative;
+			display: none;
 		}
 	}
 
-	// Remove comma after last tag
-	.tag-item:last-child .tag-link:after, .category-link:after {
-		display: none;
+	// Add additional padding to blog post images
+	img {
+		 padding: 1em 0 0.5em;
+	}
+}
+
+// Footer
+.post-footer {
+	margin: 0 auto;
+	max-width: 860px;
+	padding: 0 30px;
+	width: 100%;
+}
+
+.post-attributes {
+	.flex-display(inline-flex);
+	margin-top: 0;
+}
+
+.post-tags {
+	margin-left: 20px;
+}
+
+// Font styling for blog metadata
+.timestamp, .category-title, .category-link, .tags-title, .tag-link {
+    color: @color__form-label--text;
+    font-family: @font-swatch4-font-family;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+// Tags and date text colour
+.timestamp, .category-link, .tag-link {
+	display: inline-block;
+}
+
+.timestamp {
+	margin-right: 20px;
+}
+
+// Add comma after any kind of tag
+.category-link, .tag-link {
+	&:after {
+		content: ",";
+		position: relative;
+	}
+}
+
+// Remove comma after last tag
+.tag-item:last-child .tag-link:after, .category-link:after {
+	display: none;
+}
+
+// Social sharing icons
+.sharing-links {
+	padding: 0;
+ 	position: relative;
+
+	li.network-item {
+		margin: 10px 16px 10px 0;
 	}
 
-	// Social sharing icons
-	.sharing-links {
+	button {
+		background-color: transparent;
+		color: fade(@color-swatch2, 75%);
+		font-size: 16px;
+		min-width: initial;
 		padding: 0;
-	 	position: relative;
-
-		li.network-item {
-			margin: 10px 16px 10px 0;
-		}
-
-		button {
+		overflow: hidden;
+		height: 25px;
+		width: 15px;
+		&:hover {
 			background-color: transparent;
-			color: fade(@color-swatch2, 75%);
-			font-size: 16px;
-			min-width: initial;
-			padding: 0;
-			overflow: hidden;
-			height: 25px;
-			width: 15px;
-			&:hover {
-				background-color: transparent;
-				color: fade(@color-swatch2, 90%);
-			}
+			color: fade(@color-swatch2, 90%);
 		}
 	}
 }
+
 
 // If image is available these styles are applied
 .blogpost .post-article > .post-image ~ .post-content {

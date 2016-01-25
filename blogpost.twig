@@ -33,11 +33,11 @@
 <div class="template-container">
 	<div class="blogpost-page">
 
-	<!-- BLOG POST -->
-	{{widget('blogpost', 'singleblogpost', {})|raw}}
-
 	<!-- HEADER -->
 	{% include "includes/header.twig" %}
+
+	<!-- BLOG POST -->
+	{{widget('blogpost', 'singleblogpost', {})|raw}}
 
 	<!-- FOOTER -->
 	{% include "includes/footer.twig" %}
@@ -53,14 +53,6 @@
 
 <!-- PLUGINS -->
 <script src="{{asset('js/main.js')}}"></script>
-
-{% block scripts %}
-	<script>
-	 if(!$("div").hasClass("post-image")){
-	    $("div.blog-post").addClass("has-image");
-	 }
-	 </script>
-{% endblock %}
 
 </body>
 </html>

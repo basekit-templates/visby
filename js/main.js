@@ -6,9 +6,16 @@ $( ".navigation-item.folder .item-name--parent" ).each(function() {
 });
 
 
- // Toggles class open to display/hide filters
+// Toggles class open to display/hide filters
 $(document).on("click", ".filters-toggle", function() {
     $( ".ecomproductslist" ).toggleClass( "filters-open" );
+});
+
+
+$(document).ready(function(){
+    if ( $("article").hasClass("post-article--has-image") ) {
+        $(".blogpost-page").addClass("has-image");
+    }
 });
 
 
