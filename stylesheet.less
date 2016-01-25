@@ -860,8 +860,8 @@ div[data-widget-type="extendednavigation"] {
             height: 20px;
             background: transparent;
             text-indent: -9999px;
-            border-top: 2px solid white;
-            border-left: 2px solid white;
+            border-top: 2px solid @color__slideshow-pagination-item--background;
+            border-left: 2px solid @color__slideshow-pagination-item--background;
             transition: all .3s ease-in-out;
             text-decoration: none;
             color: transparent;
@@ -883,8 +883,8 @@ div[data-widget-type="extendednavigation"] {
             height: 20px;
             background: transparent;
             text-indent: -9999px;
-            border-top: 2px solid white;
-            border-left: 2px solid white;
+            border-top: 2px solid @color__slideshow-pagination-item--background;
+            border-left: 2px solid @color__slideshow-pagination-item--background;
             transition: all .3s ease-in-out;
             text-decoration: none;
             color: transparent;
@@ -916,7 +916,7 @@ div[data-widget-type="extendednavigation"] {
             &:after {
                 border-style: solid;
                 border-width: 9px 0 10px 13px;
-                border-color: transparent transparent transparent white;
+                border-color: transparent transparent transparent @color__slideshow-pagination-item--background;
                 content: "";
                 position: absolute;
                 width: 0;
@@ -935,7 +935,7 @@ div[data-widget-type="extendednavigation"] {
 
             &.pause {
                 &:before, &:after {
-                    background-color: white;
+                    background-color: @color__slideshow-pagination-item--background;
                     content: "";
                     display: inline-block;
                     margin: 0;
