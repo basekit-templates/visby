@@ -4,7 +4,7 @@
     "screenshot" : "visby-screenshot.jpg",
     "widgetVersion": 2,
     "templateType":"standard",
-    "pageTypes": ["home", "blogpost", "blog"],
+    "pageTypes": ["home", "blogpost"],
     "images":[
         "images/logo.png",
         "images/slideshow-1.jpg",
