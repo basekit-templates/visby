@@ -51,6 +51,18 @@
 // ---------------
 
 
+// Body styling
+body {
+    background-color: @color__body--background;
+}
+
+
+// Entire template container
+.template-container {
+    position: relative;
+}
+
+
 // Container
 .container {
     margin: 0 auto;
@@ -61,21 +73,13 @@
     }
 }
 
-.template-container {
-    position: relative;
-}
-
-body {
-    background-color: @color__body--background;
-}
-
 
 
 // Form Styles
 // ---------------
 
 
-// Legends
+// Legend styles
 legend {
     color: @color__form-legend--text;
     font-family: @font__h2--font-family;
@@ -91,7 +95,8 @@ legend {
     }
 }
 
-// Labels
+
+// Label styles
 label,
 .cell--header {
     color: @color__form-label--text;
@@ -103,24 +108,26 @@ label,
     text-transform: uppercase;
 }
 
+
 // Inputs & textareas
 input[type="search"],
 input[type="email"],
 input[type="password"],
 textarea,
 .input--single-line {
-    border: 2px solid #ddd;
+    border: 2px solid @color__form--border;
     color: darken(@color__p--text, 20%);
     font-size: bkscale(@font__p--font-size, 0.95);
     padding: 10px;
     -webkit-appearance: none;
     &:focus {
-        border-color: #C1C1C1;
+        border-color: darken(@color__form--border, 10%);
         box-shadow: inset 0 0px 10px rgba(240,240,240, 0.5);
         .transition(.3s all ease-in);
     }
 }
 
+// Heights for inputs only
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -129,7 +136,8 @@ input[type="password"],
     height: 54px;
 }
 
-// Selects
+
+// Select styles
 select {
     font-family: @font-swatch4-font-family;
     -webkit-appearance: none;
@@ -145,9 +153,11 @@ select {
     width: 100%;
 }
 
+// MS select styling
 select::-ms-expand{
     display: none;
 }
+
 
 // Add custom dropdown icon to selects
 .select-wrap {
@@ -163,7 +173,8 @@ select::-ms-expand{
     }
 }
 
-// Buttons
+
+// Button styling
 button,
 .button {
     background-color: @color__button--background;
@@ -182,6 +193,7 @@ button,
     }
 }
 
+// Show & hide button
 .button--expand {
     background-color: transparent;
     padding: 0;
@@ -189,6 +201,7 @@ button,
     &:hover {
         background-color: transparent;
     }
+
     .more, .less {
         background-color: @color__button--background;
         color: @color__secondary;
@@ -201,8 +214,9 @@ button,
 }
 
 
-// Header
-// ---------------
+
+// Header Styling
+// ----------------
 
 
 // Fix for VH not working with the mobile editor in iOS
@@ -219,7 +233,8 @@ button,
     }
 }
 
-// Default header styling
+
+// Default header styling (For pages with no overlayed feature, slideshow, blog image etc)
 .template-header,
 .slideshow-home [data-widget-type="responsiveslideshow"].bk-tpl-hidden + .template-header,
 .blogpost-page [data-widget-type="blogpost"].bk-tpl-hidden + .template-header {
@@ -237,9 +252,9 @@ button,
         padding: 20px 0 20px 25px;
     }
 
-    // Header flexbox alignment
+
+    // Header container
     .container {
-        // Flex
         .flex;
         .flex-display;
         .flex-wrap(nowrap);
@@ -258,7 +273,8 @@ button,
         }
     }
 
-    // Logo & Companyname
+
+    // Logo & companyname
     [data-widget-type="logo"],
     [data-widget-type="companyname"] {
         @media @tablet-860px  {
@@ -266,7 +282,8 @@ button,
         }
     }
 
-    // Logo
+
+    // Logo styling
     [data-widget-type="logo"] {
         margin-right: 12px;
         max-width: 100%;
@@ -276,7 +293,8 @@ button,
         }
     }
 
-    // Companyname
+
+    // Companyname styling
     [data-widget-type="companyname"] {
         @media @tablet-860px  {
             padding-right: 60px;
@@ -284,21 +302,24 @@ button,
     }
 
     .companyname {
-        line-height: @font__companyname--line-height;
+        line-height: 0;
     }
 
+    // Company name colour
     .company-link {
         color: @color__h1--text;
+        line-height: @font__companyname--line-height;
     }
 }
 
 
-// Logo
+// Stops logo overlapping at mobile
 @media @mobile-650px {
     .logo-image {
         max-width: 125px;
     }
 }
+
 
 // Header styling if slideshow is present
 .slideshow-home [data-widget-type="responsiveslideshow"] + .template-header,
@@ -321,12 +342,15 @@ button,
         }
     }
 
+    // Companyname colour when overlayed
     .company-link {
         color: @color__companyname--text;
     }
 
-    // Color of navigation links when overlaying a feature image
+    // Color of navigation links when overlaying a slideshow or blog image
     .navigation-item {
+
+        // Selected navigation colour
         &.selected .item-name {
             color: @color__slideshow-title--text;
 
@@ -334,6 +358,8 @@ button,
                 color: @color__navigation--text;
             }
         }
+
+        // Normal navigation colour
         .item-name {
             color: fade(@color__slideshow-title--text, 65%);
             font-size: bkscale(@font__navigation--font-size, 0.95);
@@ -343,6 +369,7 @@ button,
                 color: fade(@color__navigation--text, 65%);
              }
 
+            // hover navigation colour
             &:hover {
                 color: @color__slideshow-title--text;
 
@@ -352,6 +379,7 @@ button,
             }
         }
 
+        // Folder navigation colour
         &.folder ul .item-name {
             color: fade(@color__navigation--text, 65%);
 
@@ -360,6 +388,7 @@ button,
             }
         }
 
+        // Folder dropdown arrow
         &.folder span.item-name:after {
             color: fade(white, 30%);
 
@@ -369,31 +398,35 @@ button,
         }
     }
 
+    // Ecom basket dividing line
     .ecombasket:before {
         background-color: fade(@color__slideshow-title--text, 25%);
     }
 
-    .navigation-toggle:after,
-    .navigation-toggle:before {
-        background-color: white;
-    }
-
+    // Navigation icon colour
     .navigation-toggle {
 
         // Displays as icon's middle bar
         background-color: white;
+
+        &:before,
+        &:after {
+            background-color: white;
+        }
     }
 }
 
 
-// Navigation
-// ---------------
+
+// Navigation Styles For Default Pages
+// ------------------------------------
 
 
 // Hide navigation toggle button
 .navigation-toggle {
     display: none;
 }
+
 
 // Universal navigation styling
 .navigation-item {

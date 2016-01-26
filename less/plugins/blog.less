@@ -13,6 +13,8 @@
 //  1. Blog Search
 // -----------------------------
 
+
+// Adds background colour to blog search
 div[data-widget-type="blogsearch"] {
 	background-color: @color__blogsearch--background;
     border-bottom: 1px solid darken(@color__blogsearch--background, 5%);
@@ -20,7 +22,7 @@ div[data-widget-type="blogsearch"] {
     padding: 30px 30px 25px;
     text-align: left;
 
-    // Signup form
+    // Adds max-wisth to form elements
     .blogsearch {
         margin: 0 auto;
         max-width: 860px;
@@ -36,7 +38,6 @@ div[data-widget-type="blogsearch"] {
             visibility: hidden;
         }
 
-        // Form group
         .form-group {
             padding: 0;
 
@@ -53,7 +54,7 @@ div[data-widget-type="blogsearch"] {
 
         // Form input
         input {
-            border: 1px solid #E2E2E2;
+            border: 1px solid darken(@color__blogsearch--background, 6%);
             padding-left: 25px;
 
             @media @mobile-650px {
@@ -68,16 +69,6 @@ div[data-widget-type="blogsearch"] {
             margin: 0;
         }
     }
-
-    // Remove padding from profile widget text
-    h2.headline, p.business {
-        padding-bottom: 0;
-    }
-
-    // Pushes Twitter username away from twitter bird
-    .account-name {
-        padding-right: 40px;
-    }
 }
 
 
@@ -86,17 +77,18 @@ div[data-widget-type="blogsearch"] {
 //  2. Blog Post List
 // -----------------------------
 
+
+// If blog serach is present remove margin from blog post list
 div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	margin-top: 0;
 }
 
 
-// Post list page
+// Blog post list page
 .blogpostlist {
 	margin-top: 20px;
 
-
-	// Post container
+	// Single blog post container
 	.post-article {
 		.flex-display;
 		.flex-direction(column);
@@ -109,7 +101,6 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			margin-bottom: 0;
 		}
 	}
-
 
 	// Uses background image and makes it span full width
 	.post-image {
@@ -136,8 +127,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-
-	// Post content
+	// Contains post content to readable length
 	.post-content {
 		margin: 0 auto;
 		padding: 0 0 20px 0;
@@ -180,7 +170,6 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-
 	// Blog post list footer
 	.post-footer {
 		padding: 2em 0 0.45em;
@@ -188,7 +177,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		text-align: center;
 		width: 100%;
 
-		// Timestamp
+		// Blog timestamp
 		.timestamp {
 			color: @color__form-label--text;
 			font-family: @font-swatch4-font-family;
@@ -200,7 +189,6 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-
 	// Previous and next buttons
 	.post-list-footer {
 		margin-top: 40px;
@@ -208,7 +196,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 }
 
 
-// Pagination
+// Blog pagination
 .blogpostlist__pagination-list {
 	.flex-display;
 	.justify-content(space-between);
@@ -220,14 +208,17 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 //  3. Blog Post
 // -----------------------------
 
-// Article container
+
+// Single blog post container
 .post-article {
 	position: relative;
 
+	// Add margin to the last post article
 	&:last-child {
 		margin-bottom: 3em;
 	}
 }
+
 
 // If the blog post has an image apply these styles
 .post-article--has-image {
@@ -253,6 +244,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			height: 100vh;
 		}
 
+		// Adds overlay to the image to make title text readable
 		&:before {
 			background-color: fade(black, 45%);
 			content: "";
@@ -276,13 +268,11 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-
 	// Hide the inline image
 	.image {
 		display: none;
 		visibility: hidden;
 	}
-
 
 	// Position the blog post title over the image
 	.post-header {
@@ -332,7 +322,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-	// Content area
+	// Blog content area
 	.post-content {
 		padding: 10rem 30px 2rem;
 
@@ -348,6 +338,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 }
 
 
+// Blog post content area
 .post-content {
 	margin: 0 auto;
 	max-width: 860px;
@@ -404,7 +395,8 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	}
 }
 
-// Footer
+
+// Blog post footer
 .post-footer {
 	margin: 0 auto;
 	max-width: 860px;
@@ -412,17 +404,26 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	width: 100%;
 }
 
+
+// Blog post attributes
 .post-attributes {
 	.flex-display(inline-flex);
 	margin-top: 0;
 }
 
+
+// Blog post tags
 .post-tags {
 	margin-left: 20px;
 }
 
+
 // Font styling for blog metadata
-.timestamp, .category-title, .category-link, .tags-title, .tag-link {
+.timestamp,
+.category-title,
+.category-link,
+tags-title,
+.tag-link {
     color: @color__form-label--text;
     font-family: @font-swatch4-font-family;
     font-size: 12px;
@@ -432,17 +433,22 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	text-transform: uppercase;
 }
 
-// Tags and date text colour
-.timestamp, .category-link, .tag-link {
+// Make blog footer data inline
+.timestamp,
+.category-link,
+.tag-link {
 	display: inline-block;
 }
 
+// Timestamp spacing
 .timestamp {
 	margin-right: 20px;
 }
 
+
 // Add comma after any kind of tag
-.category-link, .tag-link {
+.category-link,
+.tag-link {
 	&:after {
 		content: ",";
 		position: relative;
@@ -450,11 +456,13 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 }
 
 // Remove comma after last tag
-.tag-item:last-child .tag-link:after, .category-link:after {
+.tag-item:last-child .tag-link:after,
+.category-link:after {
 	display: none;
 }
 
-// Social sharing icons
+
+// Blog social icons
 .sharing-links {
 	padding: 0;
  	position: relative;
@@ -480,7 +488,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 }
 
 
-// If image is available these styles are applied
+// If image is available these styles are applied to the post content
 .blogpost .post-article > .post-image ~ .post-content {
 	padding: 4rem 30px 2rem;
 
@@ -489,6 +497,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	}
 }
 
+// If image is available these styles are applied to the post footer
 .blogpost .post-article > .post-image ~ .post-footer {
 	.flex-display;
 	.justify-content(flex-end);
@@ -517,7 +526,9 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		height: 100vh;
 	}
 
-	.category-title, .tags-title {
+	// Category and tags title colour
+	.category-title,
+	.tags-title {
 		color: fade(white, 50%);
 		display: block;
 		line-height: 1;
@@ -542,13 +553,19 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-	.post-category, .post-tags {
+	// Category and tags styling
+	.post-category,
+	.post-tags {
 		display: inline-block;
 		padding: 20px 25px 10px;
 
 		@media @tablet-860px {
 			padding: 20px 20px 10px 0;
 		}
+	}
+
+	.post-tags {
+		margin-left: 0;
 	}
 
 	// Blog publish date
@@ -573,12 +590,10 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		}
 	}
 
-	.post-tags {
-		margin-left: 0;
-	}
-
 	// Tags and date text colour
-	.timestamp, .category-link, .tag-link {
+	.timestamp,
+	.category-link,
+	.tag-link {
 		color: white;
 	}
 
@@ -596,6 +611,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 			right: 15px;
 		}
 
+		// Sharing buttons text colour
 		button {
 			color: fade(white, 75%);
 		}
