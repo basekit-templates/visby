@@ -368,7 +368,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	blockquote {
 		color: darken(@color__p--text, 20%);
 		font-family: @font__p--font-family;
-		font-size: @font__h3--font-size;
+		font-size: @font__h4--font-size;
 		font-style: normal;
 		line-height: @font__h3--line-height;
 		text-align: center;
@@ -419,30 +419,32 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 
 
 // Font styling for blog metadata
-.timestamp,
-.category-title,
-.category-link,
-tags-title,
-.tag-link {
-    color: @color__form-label--text;
-    font-family: @font-swatch4-font-family;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-	margin: 0;
-	text-transform: uppercase;
-}
+.blogpost {
+	.timestamp,
+	.category-title,
+	.category-link,
+	tags-title,
+	.tag-link {
+	    color: @color__form-label--text;
+	    font-family: @font-swatch4-font-family;
+	    font-size: 12px;
+	    font-weight: 700;
+	    letter-spacing: 1px;
+		margin: 0;
+		text-transform: uppercase;
+	}
 
-// Make blog footer data inline
-.timestamp,
-.category-link,
-.tag-link {
-	display: inline-block;
-}
+	// Make blog footer data inline
+	.timestamp,
+	.category-link,
+	.tag-link {
+		display: inline-block;
+	}
 
-// Timestamp spacing
-.timestamp {
-	margin-right: 20px;
+	// Timestamp spacing
+	.timestamp {
+		margin-right: 20px;
+	}
 }
 
 
