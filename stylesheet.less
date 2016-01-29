@@ -310,6 +310,18 @@ button,
         color: @color__h1--text;
         line-height: @font__companyname--line-height;
     }
+
+    // Navigation items
+    .navigation-item.selected .item-name,
+    .navigation-toggle,
+    .navigation-toggle:after,
+    .navigation-toggle:after {
+        color: @color__navigation--text--selected;
+    }
+
+    .navigation-item .item-name {
+        color: fade(@color__navigation--text, 65%);
+    }
 }
 
 
@@ -643,7 +655,6 @@ div[data-widget-type="extendednavigation"] {
 
         .navigation-list {
             padding-top: 65px;
-            text-align: right;
             max-height: 90%;
             overflow-x: scroll;
         }
@@ -659,7 +670,7 @@ div[data-widget-type="extendednavigation"] {
             &.folder ul {
                 display: none;
                 padding-top: 0;
-                text-align: right;
+                text-align: inherit;
             }
 
             &.folder.open ul {
