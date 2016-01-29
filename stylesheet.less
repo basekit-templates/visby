@@ -312,11 +312,14 @@ button,
     }
 
     // Navigation items
-    .navigation-item.selected .item-name,
+    .navigation-item.selected .item-name {
+        color: @color__navigation--text--selected;
+    }
+
     .navigation-toggle,
     .navigation-toggle:before,
     .navigation-toggle:after {
-        color: @color__navigation--text--selected!important;
+        background-color: @color__navigation--text--selected;
     }
 
     .navigation-item .item-name,
