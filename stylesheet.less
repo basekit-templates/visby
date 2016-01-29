@@ -314,12 +314,13 @@ button,
     // Navigation items
     .navigation-item.selected .item-name,
     .navigation-toggle,
-    .navigation-toggle:after,
+    .navigation-toggle:before,
     .navigation-toggle:after {
-        color: @color__navigation--text--selected;
+        color: @color__navigation--text--selected!important;
     }
 
-    .navigation-item .item-name {
+    .navigation-item .item-name,
+    .navigation-item.folder span.item-name:after {
         color: fade(@color__navigation--text, 65%);
     }
 }
