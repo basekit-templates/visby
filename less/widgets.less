@@ -179,7 +179,7 @@ ul.tweet-list {
 	text-align: center;
 
 	&:before {
-        color: @color__button--text";
+        color: @color__button--text;
 		font-size: 18px;
 		line-height: 40px;
 		margin: 0;
@@ -506,13 +506,21 @@ div[role="main"] {
         height: 500px;
 
         @media @tablet {
-            min-height: 350px;
             height: 350px;
         }
     }
 
     .responsiveslideshow {
         margin: 0 0 60px 0;
+
+        .slides-list {
+            max-height: 500px;
+            overflow: hidden;
+
+            @media @tablet {
+                max-height: 350px;
+            }
+        }
 
         // Slide Caption
         .caption {
