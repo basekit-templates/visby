@@ -506,7 +506,7 @@ div[role="main"] {
         height: 500px;
 
         @media @tablet {
-            height: 350px;
+            height: 410px;
         }
     }
 
@@ -518,7 +518,7 @@ div[role="main"] {
             overflow: hidden;
 
             @media @tablet {
-                max-height: 350px;
+                max-height: 410px;
             }
         }
 
@@ -538,6 +538,7 @@ div[role="main"] {
             width: 100%;
 
             @media @tablet {
+                bottom: 0;
                 padding: 15px 15px 10px;
                 max-width: 85%;
             }
@@ -580,6 +581,12 @@ div[role="main"] {
             margin: 0;
             width: 100%;
 
+            @media @tablet {
+                bottom: -60px;
+                top: initial;
+                height: 60px;
+            }
+
             button {
                 background-color: @color__body--background;
                 color: @color-swatch4;
@@ -591,8 +598,8 @@ div[role="main"] {
                 .transition(all 0.5s ease);
 
                 @media @tablet {
-                    top: 145px;
-                    height: 80px;
+                    top: initial;
+                    height: 60px;
                     width: 35px;
                 }
 
@@ -648,7 +655,7 @@ div[role="main"] {
                 vertical-align: top;
 
                 @media @tablet {
-                    top: 155px;
+                    top: initial;
                 }
 
                 &:after {
@@ -745,6 +752,11 @@ div[role="main"] {
         .caption {
             opacity: 0;
             visibility: hidden;
+
+            @media @tablet {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
         &:hover .pause-toggle,
