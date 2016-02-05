@@ -508,6 +508,10 @@ div[role="main"] {
         @media @tablet {
             height: 410px;
         }
+
+        @media @mobile-650px {
+            height: 300px;
+        }
     }
 
     .responsiveslideshow {
@@ -518,7 +522,12 @@ div[role="main"] {
             overflow: hidden;
 
             @media @tablet {
+                margin-bottom: 75px;
                 max-height: 410px;
+            }
+
+            @media @mobile-650px {
+                max-height: 300px;
             }
         }
 
@@ -538,9 +547,10 @@ div[role="main"] {
             width: 100%;
 
             @media @tablet {
-                bottom: 0;
+                bottom: 15px;
                 padding: 15px 15px 10px;
-                max-width: 85%;
+                margin: 0 auto;
+                max-width: 96%;
             }
 
             .image-title {
@@ -582,7 +592,8 @@ div[role="main"] {
             width: 100%;
 
             @media @tablet {
-                bottom: -60px;
+                background-color: @color__button--background;
+                bottom: -75px;
                 top: initial;
                 height: 60px;
             }
@@ -621,6 +632,14 @@ div[role="main"] {
                     margin: 0;
                     vertical-align: middle;
                 }
+
+                @media @tablet {
+                    top: -245px;
+                }
+
+                @media @mobile-650px {
+                    top: -195px;
+                }
             }
 
             // Previous arrow
@@ -655,6 +674,7 @@ div[role="main"] {
                 vertical-align: top;
 
                 @media @tablet {
+                    background-color: transparent;
                     top: initial;
                 }
 
@@ -670,6 +690,10 @@ div[role="main"] {
                     left: 0;
                     right: 0;
                     top: 20px;
+
+                    @media @tablet {
+                        border-color: transparent transparent transparent @color__button--text;
+                    }
                 }
 
                 &:before {
@@ -690,6 +714,10 @@ div[role="main"] {
                         width: 4px;
                         top: 20px;
                         visibility: visible;
+
+                        @media @tablet {
+                            background-color: @color__button--text;
+                        }
                     }
                     &:before {
                         left: 22px;
@@ -710,6 +738,10 @@ div[role="main"] {
             position: absolute;
             bottom: -50px;
             width: 100%;
+
+            @media @tablet {
+                display: none;
+            }
 
             // Restrict Width of Pagination
             ul.pagination-list {
