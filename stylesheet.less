@@ -228,9 +228,16 @@ button,
 .blog-page body.edit .template-container {
     @media @tablet-860px {
         height: 100%;
-        overflow-y: scroll;
+        overflow: hidden;
         -ms-overflow-style: -ms-autohiding-scrollbar;
         -webkit-overflow-scrolling: touch;
+    }
+}
+
+.home-page body.edit .template-container,
+.blog-page body.edit .template-container {
+    @media @tablet-860px {
+        overflow-x: scroll;
     }
 }
 
