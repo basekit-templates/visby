@@ -220,10 +220,12 @@ button,
 
 
 // Fix for VH not working with the mobile editor in iOS
-.home-page body.edit,
-.blog-page body.edit,
-.home-page body.edit .template-container,
-.blog-page body.edit .template-container {
+.home-page,
+.blog-page,
+.home-page body.touch,
+.blog-page body.touch,
+.home-page body.touch .template-container,
+.blog-page body.touch .template-container {
     @media @tablet-860px {
         height: 100%;
         overflow: hidden;
@@ -232,8 +234,8 @@ button,
     }
 }
 
-.home-page body.edit .template-container,
-.blog-page body.edit .template-container {
+.home-page body.touch .template-container,
+.blog-page body.touch .template-container {
     @media @tablet-860px {
         overflow: scroll;
     }
