@@ -412,7 +412,6 @@ button.basket-toggle,
 
         // Input Container
         &:first-child {
-        	margin-right: 0;
 
 			@media only screen and (max-width: 900px) {
 				width: 100%;
@@ -421,10 +420,24 @@ button.basket-toggle,
 			@media @tablet-860px {
 				width: auto;
 			}
+
+			@media @mobile-650px {
+				margin-right: 0;
+			}
 		}
 
 		input {
+			font-family: @font-swatch4-font-family;
 			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: 2px solid #ddd;
+			border-radius: 0;
+			font-size: 12px;
+			font-weight: 500;
+			height: 54px;
+			padding: 0 12px;
+			text-transform: uppercase;
 		}
 
 		// Button Container
@@ -493,6 +506,8 @@ button.basket-toggle,
 
 // Form Container
 form.ecomproductslist__form {
+	.flex-display;
+	.justify-content(space-between);
 
 	@media @mobile-650px {
 		display: block;
@@ -500,11 +515,16 @@ form.ecomproductslist__form {
 
 	// Search
 	.fieldset--search {
-		margin-bottom: 18px;
+		.flex(0 1 auto);
+		min-width: 25%;
 
 		@media only screen and (max-width: 900px) {
 			padding: 0 0 15px 0;
 		}
+	}
+
+	.fieldset--filters {
+		.flex(1 1 auto);
 	}
 }
 
@@ -520,7 +540,6 @@ form.ecomproductslist__form {
     .ecomproductslist__label {
     	color: @font-swatch2-color;
     	font-size: 11px;
-    	text-align: right;
     }
 
     input,
@@ -537,22 +556,16 @@ form.ecomproductslist__form {
     .fieldset--filters {
 
     	.form-body {
+    		.flex-display;
+    		.justify-content(space-between);
     		@media @mobile-650px {
     			display: block;
     		}
     	}
 
         .form-group {
-            display: block;
-            margin-right: 15px;
+            .flex(1 1 auto);
 
-            @media @tablet-860px {
-                width: 47.5%;
-
-                &:nth-child(2) {
-	            	margin-right: 0;
-	            }
-            }
             @media @mobile-650px {
     			display: block;
             	margin-right: 0;
@@ -587,6 +600,10 @@ form.ecomproductslist__form {
 	.align-items(center);
 	margin-bottom: 2em;
 
+	@media @mobile-650px {
+		margin-bottom: 1em;
+	}
+
 	.pagetitle-text {
 		font-size: @font__h2--font-size;
 		margin-bottom: 0;
@@ -606,8 +623,8 @@ form.ecomproductslist__form {
 
 	// Products list container
 	.listing-section {
-		.flex-display;
-		.flex-wrap(wrap);
+		//.flex-display;
+		//.flex-wrap(wrap);
 	}
 
 	// Section title and filters section (hidden)
@@ -618,21 +635,15 @@ form.ecomproductslist__form {
 		width: 0;
 		opacity: 0;
 		visibility: hidden;
+		width: 100%;
 		-webkit-transition: visiblity 1s ease, width 0.5s ease;
 	}
 
 	// Make section title and filters section visible
 	&.filters-open .listing-header {
-		border-left: 1px solid #EFEFEF;
 		height: auto;
 		opacity: 1;
 		visibility: visible;
-
-		.flex(1 0 auto);
-		margin-left: 5%;
-		padding-left: 2.5em;
-		.transition(all 0.5s ease-in-out);
-		width: 25%;
 	}
 
 	.listing-title {
@@ -643,34 +654,35 @@ form.ecomproductslist__form {
 	.listing-order {
 		font-size: 16px;
 		padding: 18px 0 0;
-		position: absolute;
-		bottom: 0;
-		right: 0;
 	}
 
 	.product-list {
 		.clearfix;
 	}
 
-	.listing-body {
+	/*.listing-body {
 		order: 1;
 		.flex(1 0 auto);
 		width: 100%;
 		-webkit-transition: width 0.5s ease, opacity 1s ease;
-	}
+	}*/
 
-	// Alter width to account for filters
+	/* Alter width to account for filters
 	&.filters-open .listing-body {
 		width: 65%;
-	}
+
+		@media @tablet-860px {
+			width: 100%;
+		}
+	}*/
 
 	.product-item {
 		float: left;
 		padding: 0 12px 30px;
 		height: auto;
-		width: 25%;
+		width: 33.33%;
 
-		&:nth-child(4n+1) {
+		&:nth-child(3n+1) {
 			clear: left;
 			padding-left: 0;
 			padding-right: 24px;
@@ -681,7 +693,7 @@ form.ecomproductslist__form {
 			}
 		}
 
-		&:nth-child(4n+4) {
+		&:nth-child(3n+3) {
 			padding-left: 24px;
 			padding-right: 0;
 
@@ -723,6 +735,14 @@ form.ecomproductslist__form {
 	// Alter width to account for filters
 	&.filters-open .product-item {
 		width: 33.33%;
+
+		@media @tablet-860px {
+			width: 50%;
+		}
+
+		@media @mobile-650px {
+			width: 100%;
+		}
 
 		&:nth-child(4n+1) {
 			clear: none;
@@ -808,7 +828,7 @@ form.ecomproductslist__form {
 }
 
 &.filters-open .listing-footer {
-	padding-right: 35%;
+	//padding-right: 35%;
 }
 
 // Pagination
@@ -819,7 +839,7 @@ form.ecomproductslist__form {
     .button {
         margin: 25px 0 20px;
         min-width: 0;
-        padding: 3px 15px;
+        padding: 10px 15px;
     }
 
     // Previous Button Icon
