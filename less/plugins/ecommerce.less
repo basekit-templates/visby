@@ -925,12 +925,12 @@ form.ecomproductslist__form {
 		.align-items(center);
 		padding: 50px 0;
 		position: relative;
-		min-height: 86vh;
+		height: 92vh;
 
 		@media @tablet-860px {
 			display: block;
-			min-height: auto;
-			padding-top: 0;
+			height: auto;
+			padding: 0 0 25px;
 		}
 	}
 
@@ -985,11 +985,14 @@ form.ecomproductslist__form {
 	// Product images unordered list
 	.product-gallery {
 		margin: 0;
-		position: relative;
+		height: 92vh;
+		overflow-y: scroll;
+		width: 100%;
 
 		@media @tablet-860px {
 			background-color: transparent;
 			margin: 10px 0 20px;
+			height: auto;
 		}
 
 		@media @mobile-650px {
@@ -1171,6 +1174,10 @@ form.ecomproductslist__form {
 
 		.tags-title {
 			margin-right: 5px;
+		}
+
+		.tag-link:after {
+			display: none;
 		}
 
 		// Adds divider to tags
