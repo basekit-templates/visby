@@ -653,7 +653,11 @@ form.ecomproductslist__form {
 
 	.listing-order {
 		font-size: 16px;
-		padding: 18px 0 0;
+		padding: 0 0 25px;
+
+		@media @mobile-650px {
+			padding: 10px 0 20px;
+		}
 	}
 
 	.product-list {
@@ -733,7 +737,7 @@ form.ecomproductslist__form {
 	}
 
 	// Alter width to account for filters
-	&.filters-open .product-item {
+	/*&.filters-open .product-item {
 		width: 33.33%;
 
 		@media @tablet-860px {
@@ -783,7 +787,7 @@ form.ecomproductslist__form {
 				padding-left: 0;
 			}
 		}
-	}
+	}*/
 
 	.product-item-image,
 	.product-item-image .image-link {
