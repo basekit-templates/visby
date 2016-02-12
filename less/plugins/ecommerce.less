@@ -39,7 +39,7 @@
 		position: fixed;
 		overflow: visible;
 		width: 75%;
-		height: 100px;
+		height: 75px;
 		bottom: 0;
 		right: -80%;
 		top: initial;
@@ -61,6 +61,21 @@
      @media @tablet-860px {
         display: none;
     }
+}
+
+
+// Ecom basket overlay
+[data-widget-type="ecombasket"] .widget-overlay {
+	@media @tablet-860px {
+		bottom: 13px;
+	    right: 25px;
+	    top: initial!important;
+	    left: initial!important;
+	    position: fixed!important;
+	    height: 45px;
+	    width: 137px;
+	    z-index: 10002;
+	}
 }
 
 .basket-open .ecombasket {
@@ -203,7 +218,7 @@ button.basket-toggle,
 		line-height: 0;
 		padding-right: 15px;
 		position: fixed;
-		bottom: 15px;
+		bottom: 20px;
 		right: -80%;
 		text-align: right;
 		height: 40px;
@@ -406,6 +421,10 @@ button.basket-toggle,
 // Product Search
 .fieldset--search {
 
+	.form-body {
+		position: relative;
+	}
+
     // Input and Button Full Width at Mobile
     .form-group {
     	margin-bottom: 0;
@@ -472,6 +491,10 @@ button.basket-toggle,
         text-indent: -9999px;
         height: 50px;
         width: 50px;
+
+        &:hover {
+        	background-color: transparent;
+        }
     }
 }
 
@@ -574,6 +597,9 @@ form.ecomproductslist__form {
 
             &:last-child {
             	margin-right: 0;
+	            position: absolute;
+	            right: 12px;
+	            top: 38px;
             }
         }
         select {
