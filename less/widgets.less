@@ -510,7 +510,7 @@ div[role="main"] {
         }
 
         @media @mobile-650px {
-            height: 300px;
+            height: 325px;
         }
     }
 
@@ -522,19 +522,18 @@ div[role="main"] {
             overflow: hidden;
 
             @media @tablet {
-                margin-bottom: 75px;
+                margin-bottom: 25px;
                 max-height: 410px;
             }
 
             @media @mobile-650px {
-                max-height: 300px;
+                max-height: 325px;
             }
         }
 
         // Slide Caption
         .caption {
             background-color: @color__body--background;
-            bottom: -40px;
             display: block;
             margin: 0 auto;
             width: 100%;
@@ -593,9 +592,9 @@ div[role="main"] {
 
             @media @tablet {
                 background-color: @color__button--background;
-                bottom: -75px;
+                bottom: 0;
                 top: initial;
-                height: 60px;
+                height: 55px;
             }
 
             button {
@@ -638,7 +637,7 @@ div[role="main"] {
                 }
 
                 @media @mobile-650px {
-                    top: -195px;
+                    top: -145px;
                 }
             }
 
@@ -739,18 +738,9 @@ div[role="main"] {
             bottom: -50px;
             width: 100%;
 
-            @media @tablet {
-                display: none;
-            }
-
             // Restrict Width of Pagination
             ul.pagination-list {
                 text-align: center;
-
-                @media @tablet {
-                    display: none;
-                    visibility: hidden;
-                }
             }
 
             li.pagination-item {
