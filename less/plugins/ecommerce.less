@@ -970,14 +970,18 @@ form.ecomproductslist__form {
 	.product-article {
 		.flex-display;
 		.align-items(center);
-		padding: 50px 0;
+		padding: 60px 0;
 		position: relative;
-		height: 92vh;
+		min-height: 50vh;
+		max-height: 90vh;
+		height: 100%;
 
 		@media @tablet-860px {
 			display: block;
 			height: auto;
 			padding: 0 0 25px;
+			min-height: 0;
+ +			max-height: initial;
 		}
 	}
 
@@ -998,9 +1002,11 @@ form.ecomproductslist__form {
 		.image-link {
 			height: auto;
 			line-height: auto;
+			text-align: center;
 			@media @tablet-860px {
 				line-height: auto;
 				height: auto;
+				text-align: left;
 			}
 
 			.image {
@@ -1032,8 +1038,10 @@ form.ecomproductslist__form {
 	// Product images unordered list
 	.product-gallery {
 		margin: 0;
-		height: 92vh;
-		overflow-y: scroll;
+		padding-top: 50px;
+		min-height: 50vh;
+		max-height: 90vh;
+		height: 100%;
 		width: 100%;
 
 		@media @tablet-860px {
@@ -1081,7 +1089,7 @@ form.ecomproductslist__form {
 
 		// Product image anchor link
 		.image-button {
-			display: block;
+			text-align: center;
 
 			// Product image
 			.image {
@@ -1283,6 +1291,7 @@ form.ecomproductslist__form {
 	margin: 0;
 	position: relative;
 	height: 100%;
+	width: 100%;
 }
 
 
