@@ -1117,10 +1117,17 @@ form.ecomproductslist__form {
 			// Product image
 			.image {
 				display: block;
-				max-height: 150px;
 				max-width: 100%;
 				height: auto;
 				width: auto;
+
+				@media @tablet-860px {
+					max-height: 250px;
+				}
+
+				@media @mobile-650px {
+					max-height: 150px;
+				}
 			}
 		}
 	}
