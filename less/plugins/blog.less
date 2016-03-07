@@ -105,6 +105,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	// Uses background image and makes it span full width
 	.post-image {
 		display: block;
+		.flex-order(1);
 		width: 100%;
 
 		.image-link {
@@ -133,7 +134,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		padding: 0 0 20px 0;
 		max-width: 750px;
 		text-align: center;
-		order: 3;
+		.flex-order(3);
 
 		@media @tablet-860px {
 			margin-bottom: 0;
@@ -173,7 +174,7 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 	// Blog post list footer
 	.post-footer {
 		padding: 2em 0 0.45em;
-		order: 2;
+		.flex-order(2);
 		text-align: center;
 		width: 100%;
 
@@ -327,7 +328,6 @@ div[data-widget-type="blogsearch"] + div[role="main"] .blogpostlist {
 		padding: 10rem 30px 2rem;
 
 		@media @tablet-860px {
-		.flex( 0 100%);
 			padding-bottom: 0;
 		}
 
