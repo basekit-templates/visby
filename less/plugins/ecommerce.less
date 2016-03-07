@@ -111,7 +111,12 @@
 	z-index: 9999;
 
 	@media @tablet-860px {
+		.justify-content(flex-start);
 		padding: 30px 30px 100px;
+	}
+
+	@media screen and (max-width: 995px) , screen and (max-height: 700px) {
+		padding: 25px 25px 80px;
 	}
 
 	.basket-list,
@@ -387,6 +392,21 @@ button.basket-toggle,
 			display: none;
 			visibility: hidden;
 		}
+	}
+}
+
+.basket-footer {
+	@media screen and (max-width: 650px), screen and (max-height: 680px) {
+		padding: 12px 20px;
+		.align-items(center);
+	}
+}
+
+
+.basket-footer .view-basket {
+	@media screen and (max-width: 650px), screen and (max-height: 680px) {
+		font-size: 12px;
+		padding: 4px 20px;
 	}
 }
 
