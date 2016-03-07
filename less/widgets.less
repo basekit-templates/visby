@@ -591,10 +591,10 @@ div[role="main"] {
             width: 100%;
 
             @media @tablet {
-                background-color: @color__button--background;
+                background-color: transparent;
                 bottom: 0;
                 top: initial;
-                height: 55px;
+                height: 60px;
             }
 
             button {
@@ -664,7 +664,7 @@ div[role="main"] {
             // Pause button
             .js-btn-play {
                 background-color: @color__body--background;
-                height: 55px;
+                height: 60px;
                 width: 60px;
                 margin: 0 auto;
                 left: 0;
@@ -673,9 +673,9 @@ div[role="main"] {
                 vertical-align: top;
 
                 @media @tablet {
-                    background-color: transparent;
-                    bottom: initial;
+                    background-color: @color__button--background;
                     top: initial;
+                    width: 100%;
                 }
 
                 &:after {
@@ -736,7 +736,7 @@ div[role="main"] {
             display: block;
             margin: 0;
             position: absolute;
-            bottom: -50px;
+            bottom: -45px;
             width: 100%;
 
             // Restrict Width of Pagination
