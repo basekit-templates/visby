@@ -115,6 +115,33 @@ ul.tweet-list {
 	}
 }
 
+// If twitter widget is in two columns
+.columns-two-left .tweet-list li ,
+.columns-two-right .tweet-list li  {
+    margin-right: 2%;
+    width: 48%;
+
+    @media @mobile-650px {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+// If twitter widget is in three or four columns
+.columns-three-left,
+.columns-three-right,
+.columns-four-left,
+.columns-four-right,
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .tweet-list li {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
 // Twitter account name styling
 .account-name {
 	font-family: @font__h2--font-family;
