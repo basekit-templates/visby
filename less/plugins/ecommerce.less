@@ -483,8 +483,12 @@ button.basket-toggle,
         &:last-child {
         	margin-right: 0;
         	position: absolute;
-        	right: 0;
+        	right: 10px;
         	top: 38px;
+
+        	@media @mobile-650px {
+        		right: 2px;
+        	}
         }
     }
 
