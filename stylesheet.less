@@ -249,6 +249,7 @@ button,
     border-bottom: 1px solid @color-swatch7;
     padding: 15px 25px;
     position: relative;
+    z-index: 1;
 
     @media @tablet-860px {
         padding: 20px 0 20px 20px;
@@ -1093,16 +1094,14 @@ div[role="main"] {
     }
 
     &.ecom-product {
-        min-height: 50vh;
-        max-height: 90vh;
+        /*min-height: 50vh;
+        max-height: 90vh;*/
         height: 100%;
         padding: 0 1em 0;
 
         @media @tablet-860px {
             padding: 2em 25px;
             height: auto;
-            min-height: 0;
-            max-height: initial;
         }
     }
 }

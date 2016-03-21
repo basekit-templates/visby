@@ -833,14 +833,15 @@ form.ecomproductslist__form {
 	}*/
 
 	.product-item-image,
-	.product-item-image .image-link {
+	.product-item-image .image-link,
+	.product-item-image .image {
 		background-color: transparent;
 		max-height: 500px;
 		height: auto;
 		width: auto;
 
 		@media @mobile-650px {
-			max-height: initial;
+			max-height: 400px;
 		}
 	}
 
@@ -979,7 +980,8 @@ form.ecomproductslist__form {
 //  4. Ecommerce Single Product
 // -----------------------------
 
-[data-name="ecomproduct"] {
+[data-name="ecomproduct"],
+[data-widget-type="ecomproduct"] {
 	margin: 0 auto;
 	max-width: 1200px;
 }
@@ -992,8 +994,8 @@ form.ecomproductslist__form {
 		.align-items(center);
 		padding: 60px 0;
 		position: relative;
-		min-height: 50vh;
-		max-height: 90vh;
+		/*min-height: 50vh;
+		max-height: 90vh;*/
 		height: 100%;
 
 		@media @tablet-860px {
@@ -1027,6 +1029,15 @@ form.ecomproductslist__form {
 				line-height: auto;
 				height: auto;
 				text-align: left;
+			}
+		}
+
+		.image-link,
+		.image {
+			max-height: 1000px;
+
+			@media @mobile-650px {
+				max-height: 650px;
 			}
 		}
 	}
@@ -1069,20 +1080,12 @@ form.ecomproductslist__form {
 
 		// Product images list element
 		.gallery-item {
+			background-color: transparent;
 			width: 100%;
 			height: auto;
 			line-height: auto;
 			cursor: pointer;
 			margin-top: 20px;
-
-			/*@media @tablet-860px {
-				background-color: transparent;
-				line-height: 100px;
-				height: 100px;
-				margin-right: 4px;
-				margin-top: 0;
-				width: 120px;
-			}*/
 
 			&:first-child {
 				margin-top: 0;
@@ -1117,6 +1120,7 @@ form.ecomproductslist__form {
 			// Product image
 			.image {
 				display: block;
+				max-height: 850px;
 				max-width: 100%;
 				height: auto;
 				width: auto;
