@@ -6,6 +6,7 @@
     "templateType":"standard",
     "pageTypes": ["home"],
     "images":[
+        "images/image-1.jpg",
         "images/logo.png",
         "images/slideshow-1.jpg",
         "images/slideshow-2.jpg"
