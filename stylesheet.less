@@ -73,6 +73,17 @@ body {
     }
 }
 
+// Fix for full height slideshow on iOS Safari
+.slideshow-home,
+[data-widget-type="responsiveslideshow"],
+.slideshow-home .responsiveslideshow,
+.slideshow-home .slides-list,
+.slideshow-home .responsiveslideshow figure {
+    height: 100%;
+}
+
+
+
 
 
 // Form Styles
@@ -761,8 +772,6 @@ div[data-widget-type="extendednavigation"] {
 
     .slides-list {
         position: relative;
-        height: 650px;
-        height: 100vh;
     }
 
     // Overide the default display method to be able to transition
@@ -792,7 +801,6 @@ div[data-widget-type="extendednavigation"] {
         .align-items(center);
         .justify-content(center);
         min-height: 0;
-        height: 100vh;
 
         &:after {
             background-color: fade(#100907, 40%);
