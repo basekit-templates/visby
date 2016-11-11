@@ -559,9 +559,25 @@ ul.navigation-list--children {
     margin: 0;
 }
 
+div[data-widget-type="companyname"] {
+    display: inline-block;
+    float: right;
+    width: 50%;
+    @media @tablet {
+        display: block;
+        float: inherit;
+        width: 100%;
+    }
+}
+
 div[data-widget-type="extendednavigation"] {
-    .flex(1 1 auto);
+    display: inline-block;
+    float: right;
+    width: 50%;
     position: relative;
+    @media @tablet {
+        flex(1 1 auto);
+    }
 }
 
 @media @tablet-860px {
