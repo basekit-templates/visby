@@ -20,40 +20,38 @@
 
 	<!-- CONTAINER -->
 <div class="template-container">
-	<div class="slideshow-home">
 
-		<!-- FULL SCREEN SLIDESHOW -->
-		{{widget('responsiveslideshow', 'slideshow', {
-			'duration':'5',
-			'transSpeed': '4000',
-			'transType': 'fade',
-			'showButtons': false,
-			'showBullets': true,
-			'allowPause': false,
-			'allowLoop': false,
-			'crop': true,
-			'images':[
-			{
-				'imageHeight':'auto',
-				'imageWidth':'100%',
-				'url':asset('images/slideshow-1.jpg'),
-				'title':'Lorem ipsum dolor sit title',
-        		'description': 'Nam eget leo maximus, interdum nisl vitae, pretium description'
-			},
-			{
-				'imageHeight':'auto',
-				'imageWidth':'100%',
-				'url':asset('images/slideshow-2.jpg'),
-				'title':'Lorem ipsum dolor sit title',
-        		'description': 'Nam eget leo maximus, interdum nisl vitae, pretium description'
-			}
-			]
-		})|raw}}
+	<!-- FULL SCREEN SLIDESHOW -->
+	{{widget('responsiveslideshow', 'slideshow', {
+		'duration':'5',
+		'transSpeed': '4000',
+		'transType': 'fade',
+		'showButtons': false,
+		'showBullets': true,
+		'allowPause': false,
+		'allowLoop': false,
+		'crop': true,
+		'images':[
+		{
+			'imageHeight':'auto',
+			'imageWidth':'100%',
+			'url':asset('images/slideshow-1.jpg'),
+			'title':'Lorem ipsum dolor sit title',
+    		'description': 'Nam eget leo maximus, interdum nisl vitae, pretium description'
+		},
+		{
+			'imageHeight':'auto',
+			'imageWidth':'100%',
+			'url':asset('images/slideshow-2.jpg'),
+			'title':'Lorem ipsum dolor sit title',
+    		'description': 'Nam eget leo maximus, interdum nisl vitae, pretium description'
+		}
+		]
+	})|raw}}
 
-		<!-- HEADER -->
-		{% include "includes/header.twig" %}
+	<!-- HEADER -->
+	{% include "includes/header.twig" %}
 
-	</div>
 
 	<!-- MAIN SECTION -->
 	<div role="main" id="main">

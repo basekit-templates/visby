@@ -57,7 +57,7 @@ body,
     height: 100%;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
-    
+
     @media @tablet-860px {
         overflow-y: scroll;
     }
@@ -67,7 +67,7 @@ body,
 // Body styling
 body {
     background-color: @color__body--background;
-    
+
     &.bgradVertical {
         background-attachment: fixed;
     }
@@ -95,15 +95,14 @@ body {
 }
 
 // Fix for full height slideshow on iOS Safari
-.slideshow-home,
-[data-widget-type="responsiveslideshow"],
-.slideshow-home .responsiveslideshow,
-.slideshow-home .slides-list,
-.slideshow-home .slide-item,
-.slideshow-home .responsiveslideshow figure {
+
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type,
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
     height: 100%;
 }
-
 
 
 
@@ -276,7 +275,7 @@ button,
 
 // Default header styling (For pages with no overlayed feature, slideshow, blog image etc)
 .template-header,
-.slideshow-home [data-widget-type="responsiveslideshow"].bk-tpl-hidden + .template-header,
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type.bk-tpl-hidden + .template-header,
 .blogpost-page [data-widget-type="blogpost"].bk-tpl-hidden + .template-header {
     background-color: @color__header--background;
     border-bottom: 1px solid @color-swatch7;
@@ -303,6 +302,7 @@ button,
         .align-items(center);
         .justify-content(flex-start);
         margin: 0 auto;
+        max-width: 1200px;
         position: relative;
 
         @media @tablet-860px  {
@@ -381,7 +381,7 @@ button,
 
 
 // Header styling if slideshow is present
-.slideshow-home [data-widget-type="responsiveslideshow"] + .template-header,
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type + .template-header,
 .blogpost-page.has-image .template-header {
     background-color: transparent;
     border-bottom: none;
@@ -792,17 +792,17 @@ div[data-widget-type="extendednavigation"] {
 // Slideshow
 // ---------------
 
-.slideshow-home {
+.template-container {
     position: relative;
 
-    [data-widget-type="responsiveslideshow"] .widget-overlay .widget__list {
+    [data-widget-type="responsiveslideshow"]:first-of-type .widget-overlay .widget__list {
         display: block;
         margin-top: 5px;
         top: 65px!important;
     }
 }
 
-.slideshow-home .responsiveslideshow {
+.template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow {
 
     .slides-list {
         position: relative;
