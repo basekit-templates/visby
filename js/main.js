@@ -48,9 +48,10 @@ if(publishedmode==true) {
 
 
 // Toggles class open to display/hide the whole navigation
-$( ".navigation-toggle" ).click(function() {
-	$( "body" ).toggleClass( "nav-open" );
+$(document).on("click", ".navigation-toggle", function() {
+    $( "body" ).toggleClass( "nav-open" );
 });
+
 
 function closeEverything() {
     $( ".widget__extendednavigation" ).removeClass( "open" );;
