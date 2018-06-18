@@ -228,40 +228,27 @@ button,
 // ----------------
 
 
-// Fix for VH not working with the mobile editor in iOS
-.home-page,
-.blog-page,
-.home-page body,
-.blog-page body,
-.home-page body .template-container,
-.blog-page body .template-container {
-    height: 100vh;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-
-    @media @tablet-860px {
-        overflow-y: scroll;
+// Fix for full height slideshow on iOS Safari
+.home-page {
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
+        height: 100vh;
     }
 }
 
 
-// Fix for full height slideshow on iOS Safari
-.home-page .template-container [data-widget-type="responsiveslideshow"]:first-of-type,
-.home-page .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
-.home-page .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
-.home-page .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
-.home-page .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
-    height: 100vh;
+.home-page.edit {
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
+        height: var(--viewport-height);
+    }
 }
-
-
-.home-page .edit,
-.blog-page .edit,
-.home-page .edit .template-container,
-.blog-page .edit .template-container {
-    height: var(--viewport-height);
-}
-
 
 
 // Default header styling (For pages with no overlayed feature, slideshow, blog image etc)
