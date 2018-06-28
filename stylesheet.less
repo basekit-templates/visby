@@ -51,19 +51,6 @@
 // ---------------
 
 
-html,
-body,
-.template-container {
-    height: 100%;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-
-    @media @tablet-860px {
-        overflow-y: scroll;
-    }
-}
-
-
 // Body styling
 body {
     background-color: @color__body--background;
@@ -92,16 +79,6 @@ body {
     @media @tablet-860px {
         margin: 0 25px;
     }
-}
-
-// Fix for full height slideshow on iOS Safari
-
-.template-container [data-widget-type="responsiveslideshow"]:first-of-type,
-.template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
-.template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
-.template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
-.template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
-    height: 100%;
 }
 
 
@@ -251,24 +228,25 @@ button,
 // ----------------
 
 
-// Fix for VH not working with the mobile editor in iOS
-.home-page,
-.blog-page,
-.home-page body.touch,
-.blog-page body.touch,
-.home-page body.touch .template-container,
-.blog-page body.touch .template-container {
-    @media @tablet-860px {
-        height: 100%;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        -webkit-overflow-scrolling: touch;
+// Fix for full height slideshow on iOS Safari
+.home-page {
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
+        height: 100vh;
     }
 }
 
-.home-page body.touch .template-container,
-.blog-page body.touch .template-container {
-    @media @tablet-860px {
-        overflow: scroll;
+
+.home-page.editor-loaded {
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slides-list,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .slide-item,
+    .template-container [data-widget-type="responsiveslideshow"]:first-of-type .responsiveslideshow figure {
+        height: var(--viewport-height);
     }
 }
 
