@@ -254,11 +254,11 @@
         },
         "twitter": {
             "color__twitter-item--background": "@color-swatch1"
-
         },
         "socialicons": {
-            "color__socialicons--icon--background": "transparent",
-            "color__socialicons--icon--background--hover": "transparent"
+            "color__socialicons--icon--background": "@color__button--background",
+            "color__socialicons--icon--background--hover": "@color__button--background--hover",
+            "color__socialicons--icon": "@color__button--text"
         },
         "ecommerce": {
             "color__ecomproduct-title--text": "@font-swatch4-color",
