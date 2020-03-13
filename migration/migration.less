@@ -1,0 +1,52 @@
+
+// -----------------------------
+// Migration Styles
+// -----------------------------
+
+
+#migrated-site {
+
+
+    div[role="main"] {
+        padding: 0;
+    }
+
+
+    div[role="main"] .container {
+        margin: 0;
+        max-width: 100%;
+    }
+
+
+
+
+    // Migration styles
+    // -----------------------------
+
+
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    .row:not(.row--width-no-padding) .row__container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        width: ~"calc(100% - 2em)";
+    }
+
+
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 3em;
+    }
+
+
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child) {
+        margin-top: 20px;
+    }
+
+
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 3em;
+    }
+}
