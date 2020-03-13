@@ -16,7 +16,7 @@
 	{% include basekit.headScript %}
 </head>
 
-<body class="{{ page.backgroundClass }}  home-page">
+<body {{ isV10sSite ? 'id="migrated-site"' : '' }} class="{{ page.backgroundClass }}  home-page">
 
 <!-- CONTAINER -->
 <div class="template-container">
