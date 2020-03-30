@@ -258,7 +258,8 @@
         "socialicons": {
             "color__socialicons--icon--background": "@color__button--background",
             "color__socialicons--icon--background--hover": "@color__button--background--hover",
-            "color__socialicons--icon": "@color__button--text"
+            "color__socialicons--icon": "@color__button--text",
+            "color__socialicons--icon--hover": "@color__button--text"
         },
         "ecommerce": {
             "color__ecomproduct-title--text": "@font-swatch4-color",
