@@ -214,8 +214,12 @@ ul.tweet-list {
 
 	&:hover {
 		background-color: @color__socialicons--icon--background--hover;
-		color: darken(@color__socialicons--icon, 20%);
+		color: @color__socialicons--icon--hover;
 	}
+
+    &:hover:before {
+        color: @color__socialicons--icon--hover;
+    }
 }
 
 
