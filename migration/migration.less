@@ -23,6 +23,29 @@
     }
 
 
+    [data-name="row"] .ecomcategorieslist__category-item {
+        .align-items(center);
+        .flex-display;
+
+        &:after {
+            margin-left: 24px;
+            margin-right: 0;
+
+            @media @mobile {
+                display: none;
+            }
+        }
+    }
+
+
+    [data-widget-type="responsiveslideshow"] .widget__item--visibility {
+        bottom: 30px;
+        left: 30px;
+        right: initial;
+        top: initial;
+    }
+
+
 
 
     // Migration styles
