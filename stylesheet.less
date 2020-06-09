@@ -254,6 +254,7 @@ button,
 .blogpost-page [data-widget-type="blogpost"].bk-tpl-hidden + .template-header {
     background-color: @color__header--background;
     border-bottom: 1px solid @color-swatch7;
+    min-height: 70px;
     padding: 15px 25px;
     position: relative;
     z-index: 2;
@@ -337,12 +338,25 @@ button,
     .navigation-toggle,
     .navigation-toggle:before,
     .navigation-toggle:after {
-        background-color: @color__navigation--text--selected;
+        background-color: contrast(@color__header--background, black, white);
     }
+
 
     .navigation-item .item-name,
     .navigation-item.folder span.item-name:after {
         color: fade(@color__navigation--text, 65%);
+    }
+}
+
+
+.nav-open .template-header,
+.nav-open .template-container [data-widget-type="responsiveslideshow"]:first-of-type.bk-tpl-hidden + .template-header,
+.nav-open.blogpost-page [data-widget-type="blogpost"].bk-tpl-hidden + .template-header {
+
+
+    .navigation-body .navigation-toggle:before,
+    .navigation-body .navigation-toggle:after {
+        background-color: contrast(@color__navigation-list--background, black, white);
     }
 }
 
@@ -438,15 +452,27 @@ button,
     }
 
     // Navigation icon colour
-    .navigation-toggle {
+    .navigation-toggle,
+    .navigation-toggle:before,
+    .navigation-toggle:after {
 
         // Displays as icon's middle bar
         background-color: white;
+    }
+}
 
-        &:before,
-        &:after {
-            background-color: white;
-        }
+
+.nav-open .template-container [data-widget-type="responsiveslideshow"]:first-of-type + .template-header,
+.nav-open.blogpost-page.has-image .template-header {
+
+
+    // Navigation icon colour
+    .navigation-toggle,
+    .navigation-toggle:before,
+    .navigation-toggle:after {
+
+        // Displays as icon's middle bar
+        background-color: contrast(@color__navigation-list--background, black, white);
     }
 }
 
@@ -625,7 +651,6 @@ div[data-widget-type="extendednavigation"] {
     .navigation-toggle {
 
         // Displays as icon's middle bar
-        background-color: darken(@color__navigation--text--hover, 10%);
         background-clip: content-box;
         display: inline-block;
         height: 46px;
@@ -641,7 +666,6 @@ div[data-widget-type="extendednavigation"] {
 
         // Top and bottom navigation item bar
         &:after, &:before {
-            background-color: darken(@color__navigation--text--hover, 10%);
             content: "";
             height: 2px;
             width: 30px;
@@ -663,10 +687,6 @@ div[data-widget-type="extendednavigation"] {
         &:after {
             bottom: 14px;
         }
-
-        &:hover {
-            background-color: darken(@color__navigation--text--hover, 10%);
-        }
     }
 
     .nav-open .navigation-toggle {
@@ -680,12 +700,12 @@ div[data-widget-type="extendednavigation"] {
 
         &:before {
             top: 23px;
-            background: @font-swatch6-color-hover!important;
+            background-color: contrast(@color__navigation-list--background, black, white);
             .transform(rotate(45deg));
         }
         &:after {
             bottom: 21px;
-            background: @font-swatch6-color-hover!important;
+            background-color: contrast(@color__navigation-list--background, black, white);
             .transform(rotate(-45deg));
         }
     }
@@ -1254,7 +1274,7 @@ div[role="main"] {
     a,
     .headline,
     .strapline {
-        color: lighten(@color__footer--background, 25%);
+        color: contrast(@color__footer--background, lighten(@color__footer--background, 25%), darken(@color__footer--background, 75%));
     }
 
     // Keep footer widgets vertically aligned
